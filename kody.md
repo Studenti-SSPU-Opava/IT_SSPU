@@ -15,4 +15,4 @@ sudo apt get  <br>
 mcedit = edituje v mc <br> <br>
 
 # Windows
-cmd <br>
+cmd <br> 
