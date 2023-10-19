@@ -37,3 +37,9 @@ Pokud jej ještě nemáte nainstalovaný, stáhněte si Visual Studio Code (VS C
 4. Klikněte na "Source Control" a uvidíte změny, které jste provedli.
 
 5. Zadejte zprávu commitu a klikněte na tlačítko "Commit and Sync" pro potvrzení změn.
+
+6. VSCode vás požádá o přihlášení na GitHub, povolte ho.
+
+7. Pokud jste již v prohlížeči přihlášení, nemusíte nic zadávat, stačí pouze povolit otevřít odkaz ve VSCode.
+
+8. Pokud ale nejste příhlášeni, zadejte vaše údaje a poté taktéž povolte otevření odkazu ve VSCode.
