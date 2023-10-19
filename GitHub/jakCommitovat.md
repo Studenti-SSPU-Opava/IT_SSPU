@@ -12,7 +12,7 @@ Pokud jej ještě nemáte nainstalovaný, stáhněte si Visual Studio Code (VS C
 
 1. Po přihlášení do Visual Studio Code klikněte na "Clone GitHub repository"
 
-![Clone GitHub Repository](obrazky/vscode1.png)
+<img src="https://github.com/Ferenc1234/operacni-systemy/blob/main/obrazky/vscode1.png">
 
    - Pokud zde nic takového nevidíte, můžete použít existující ikonu "Source Control" (-tři tečky spojené čarou, popř. zkratka CTRL+Shift+G) v levém sloupci VS Code a poté na "Clone Repository"
 
