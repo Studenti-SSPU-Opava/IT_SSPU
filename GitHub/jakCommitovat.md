@@ -10,17 +10,17 @@ Pokud jej ještě nemáte nainstalovaný, stáhněte si Visual Studio Code (VS C
 
 ## 2. Klonování repozitáře
 
-1. Po přihlášení do Visual Studio Code můžete použít existující ikonu "Source Control" v levém sloupci VS Code.
+1. Po přihlášení do Visual Studio Code můžete použít existující ikonu "Source Control" (-tři tečky spojené čarou, popř. zkratka CTRL+Shift+G) v levém sloupci VS Code.
 
 2. Pokud nemáte ikonu "Source Control" v levém sloupci nebo chcete otevřít nové okno VS Code, klikněte na "File" a poté "Clone Repository."
 
-3. Zadejte URL našeho GitHub repozitáře (https://github.com/Ferenc1234/operacni-systemy) a vyberte složku na vašem počítači, kam chcete repozitář klonovat.
+3. Zadejte URL našeho GitHub repozitáře (https://github.com/Ferenc1234/operacni-systemy) a vyberte složku na vašem počítači, kam chcete repozitář klonovat (dopopručuji ji pojmenovat operacniSystemy, ale není to nutné).
 
 ## 3. Vytvoření změn a commit
 
 1. Otevřete soubory, které chcete upravit nebo přidat do repozitáře.
 
-2. Pro zajištění čistého a čitelného kódu dbejte na co nejlepší formátování. Ideálně používejte konzistentní styl psaní kódu.
+2. Pro zajištění čistého a čitelného kódu dbejte na co nejlepší formátování. Ideálně používejte konzistentní styl psaní kódu. Používejte markdown! (aby text nebyl omáčka)
 
 3. Po provedení změn se vraťte do VS Code.
 
