@@ -1,5 +1,5 @@
 # Náhled do Příkazů <br>
-git clone https://github.com/AdamBohm/xxxxx.git // git@github.com:"jmeno"/"repozitar".git <br>
+git clone https://github.com/"jmeno"/"nazev-repozitare".git // git@github.com:"jmeno"/"nazev-repozitare".git <br>
 git push ![branch] <br>
 git config --global "user.email" <br> 
 git config --global "user.name" <br>
