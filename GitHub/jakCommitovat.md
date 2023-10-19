@@ -22,7 +22,7 @@ Pokud jej ještě nemáte nainstalovaný, stáhněte si Visual Studio Code (VS C
 
    <img src="https://github.com/Ferenc1234/operacni-systemy/blob/main/obrazky/vscode3.png">
 
-3. Zadejte URL našeho GitHub repozitáře (https://github.com/Ferenc1234/operacni-systemy) a vyberte složku na vašem počítači, kam chcete repozitář klonovat (dopopručuji ji pojmenovat operacniSystemy, ale není to nutné).
+3. Zadejte URL našeho GitHub repozitáře (https://github.com/Ferenc1234/operacni-systemy), stiskněte enter a vyberte složku na vašem počítači, kam chcete repozitář klonovat (dopopručuji ji pojmenovat operacniSystemy, ale není to nutné).
 
 <img src="https://github.com/Ferenc1234/operacni-systemy/blob/main/obrazky/vscode4.png">
 
