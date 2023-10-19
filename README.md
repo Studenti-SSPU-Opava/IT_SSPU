@@ -1,4 +1,4 @@
-# 📚 Vítejte v tomto úložišti!
+# 📚 Vítejte v tomto repozitáři!
 
 V tomto repozitáři najdete vše, co potřebujeme do operačních systémů.
 
