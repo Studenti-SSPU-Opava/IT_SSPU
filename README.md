@@ -15,3 +15,4 @@ Pro vkládání změn do tohoto repozitáře nebudete potřebovat žádný klí�
 Podrobnější návod, jak provádět commity, je ve složce "GitHub". Zde naleznete podrobný návod k tomu, jak na to. 🚀
 
 Díky za vaši spolupráci! 🙌
+YourBallsStinks
