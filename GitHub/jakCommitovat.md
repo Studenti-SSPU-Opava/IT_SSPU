@@ -9,7 +9,7 @@ Než začnete commitovat na náš GitHub repozitář, je třeba poslat GitHub u�
 Pokud jej ještě nemáte nainstalovaný, stáhněte si Visual Studio Code (VS Code) z [oficiální stránky](https://code.visualstudio.com/) a nainstalujte ho na svém počítači.
 
 ## 2. Klonování repozitáře
-
+ 
 1. Po přihlášení do Visual Studio Code klikněte na "Clone GitHub repository" 
  
 <img src="https://github.com/Ferenc1234/operacni-systemy/blob/main/obrazky/vscode1.png">
