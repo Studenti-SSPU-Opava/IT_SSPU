@@ -15,3 +15,13 @@ Pro vkládání změn do tohoto repozitáře nebudete potřebovat žádný klí�
 Podrobnější návod, jak provádět commity, je ve složce "GitHub". Zde naleznete podrobný návod k tomu, jak na to. 🚀
 
 Díky za vaši spolupráci! 🙌
+
+
+
+# CHANGELOG:
+
+## V 2.0
+
+- Repozitář byl předělán, ať obsahuje i kódy z programování (C, Python (- nejsem si jistý, jestli ho vůbec budeme používat, ale pro některé účely se bude hodit) ) 
+- Přidal jsem obrázky do návodu jak commitovat. 
+- Počítám s dalšími updaty návodů pro GitHub
