@@ -42,6 +42,11 @@ git commit
 git pull
 ```
 
+##### Copy ID
+```
+ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"
+```
+
 # Příkazy pro Linux
 
 ##### Změnit aktuální složku (Change Directory)
