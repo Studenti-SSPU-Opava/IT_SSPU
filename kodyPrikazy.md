@@ -86,7 +86,7 @@ mcedit
 ip add show
 ```
 
-##### Login do serveru
+##### Login do vzdáleného serveru
 
 ```
 ssh "uzivatelskeJmeno"@"ipAdresaServeru"
