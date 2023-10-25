@@ -80,6 +80,14 @@ sudo apt-get update
 mcedit
 ```
 
+##### Zobrazit IP adresu v terminálu
+
+```
+ip add show
+```
+
+
+
 # Příkazy pro Windows
 
 ##### Otevřít příkazový řádek (Command Prompt) - napsat do okénka, které se otevře po zadání Win + R
