@@ -86,6 +86,12 @@ mcedit
 ip add show
 ```
 
+##### Login do serveru
+
+```
+ssh "uzivatelskeJmeno"@"ipAdresaServeru"
+```
+
 
 
 # Příkazy pro Windows
