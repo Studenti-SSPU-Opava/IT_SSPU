@@ -97,6 +97,12 @@ ip add show
 ssh "uzivatelskeJmeno"@"ipAdresaServeru"
 ```
 
+##### Vyhledání instalačního balíčku
+
+```
+apt-cache search "název balíčku"
+```
+
 
 
 # Příkazy pro Windows
