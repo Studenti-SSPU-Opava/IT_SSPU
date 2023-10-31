@@ -8,7 +8,7 @@ int main() {
     for (int prvek = ZACATEK; prvek < POCETPRVKU; ++prvek) { //nastavi začátek pomocí konstanty ZACATEK, po každém opakování prvek++. Opakuje kód, pokud je prvek < POCETPRVKU
         printf("%10d %c",prvek,prvek); //vypíše proměnnou prvek jako číslo, poté jako znak (tzn. znak ASCII)
         opakovani++;
-        if(opakovani % POCETSLOUPCU ==0) {
+        if (opakovani % POCETSLOUPCU ==0) {
             printf("\n");
         }
     }
