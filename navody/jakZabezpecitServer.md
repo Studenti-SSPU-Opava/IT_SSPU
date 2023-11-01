@@ -1,0 +1,1 @@
+# Jak zabezpečit ssh server
