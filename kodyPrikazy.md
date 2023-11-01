@@ -138,6 +138,11 @@ sudo vi /etc/ssh/sshd_config
 ```
 sudo nano /etc/ssh/sshd_config
 ```
+##### Otevření souboru sshd_config v editoru vi
+
+```
+sudo vi /etc/ssh/sshd_config.d/50-cloud-init.conf
+```
 
 
 # Příkazy pro Windows
