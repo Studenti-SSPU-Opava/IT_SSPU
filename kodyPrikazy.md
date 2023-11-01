@@ -115,12 +115,29 @@ logout
 apt-cache search "název balíčku"
 ```
 
-##### Zkopírování hesla (souboru) na vzdálený server
+##### Zkopírování hesla (souboru) na ssh server
 
 ```
 ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"
 ```
 
+##### Změna uživatelského oprávnění k souboru id_rsa pouze vlastník RW
+
+```
+chmod 600  ~/.ssh/id_rsa
+```
+
+##### Otevření souboru sshd_config v editoru vi
+
+```
+sudo vi /etc/ssh/sshd_config
+```
+
+##### Otevření souboru sshd_config v editoru nano
+
+```
+sudo nano /etc/ssh/sshd_config
+```
 
 
 # Příkazy pro Windows
