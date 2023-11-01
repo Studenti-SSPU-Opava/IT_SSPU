@@ -138,7 +138,7 @@ sudo vi /etc/ssh/sshd_config
 ```
 sudo nano /etc/ssh/sshd_config
 ```
-##### Otevření souboru sshd_config v editoru vi
+##### Otevření souboru 50-cloud-init.conf v editoru vi
 
 ```
 sudo vi /etc/ssh/sshd_config.d/50-cloud-init.conf
