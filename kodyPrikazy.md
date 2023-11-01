@@ -115,7 +115,7 @@ logout
 apt-cache search "název balíčku"
 ```
 
-##### Zkopírování hesla (souboru) na ssh server
+##### Zkopírování klíče (souboru) na ssh server
 
 ```
 ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"
