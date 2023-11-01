@@ -91,10 +91,22 @@ mcedit
 ip add show
 ```
 
-##### Login do vzdáleného serveru
+##### Login pomocí ssh do vzdáleného serveru
 
 ```
 ssh "uzivatelskeJmeno"@"ipAdresaServeru"
+```
+
+##### Odpojení od ssh serveru
+
+```
+exit
+```
+
+##### Odpojení od ssh serveru
+
+```
+logout
 ```
 
 ##### Vyhledání instalačního balíčku
