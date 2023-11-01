@@ -115,6 +115,12 @@ logout
 apt-cache search "název balíčku"
 ```
 
+##### Zkopírování hesla (souboru) na vzdálený server
+
+```
+ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"
+```
+
 
 
 # Příkazy pro Windows
