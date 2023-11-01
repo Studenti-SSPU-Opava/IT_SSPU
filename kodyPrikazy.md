@@ -112,5 +112,3 @@ apt-cache search "název balíčku"
 ```
 cmd
 ```
-
-Tímto by měl být text přehlednější a obsahovat popisky k jednotlivým příkazům.
