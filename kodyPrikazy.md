@@ -144,6 +144,13 @@ sudo nano /etc/ssh/sshd_config
 sudo vi /etc/ssh/sshd_config.d/50-cloud-init.conf
 ```
 
+##### Kopírování z PC na vzdálený server nebo ze vzdáleného serveru do PC
+
+```
+scp "zdrojová cesta serveru/PC" "cílová složka serveru/PC"
+```
+
+
 
 # Příkazy pro Windows
 
