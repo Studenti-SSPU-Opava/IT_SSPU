@@ -6,7 +6,7 @@
 Alt Gr + Shift + 1 (nahoře nad písmeny, ne v numerické klávesnici)
 ```
 
-##### Hashtag "#"
+##### Hashtag '#'
 
 ```
 Alt Gr + X
