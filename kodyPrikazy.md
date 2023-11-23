@@ -174,6 +174,23 @@ usermod -a -G "nazevUzivatele"
 usermod -G "nazevUzivatele" "nazevUzivatele"
 ```
 
+##### Přidání skupiny (jako root)
+
+```
+addgroup "nazevSkupiny"
+```
+
+##### Odebrání skupiny (jako root)
+
+```
+delgroup "nazevSkupiny"
+```
+
+##### Vytváření souboru
+
+```
+touch "adresar"/"nazevSouboru"
+```
 
 # Příkazy pro Windows
 
