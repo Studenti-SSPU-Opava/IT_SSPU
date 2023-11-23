@@ -190,7 +190,16 @@ delgroup "nazevSkupiny"
 
 ```
 touch "adresar"/"nazevSouboru"
+
 ```
+##### změna uživatelského  módu
+
+chown [číslo oprávnění] /[uzivatel]
+
+##### Změna vlastnictví uživatele
+
+chown [uzivatel].[skupina] /[uzivatel]
+
 
 # Příkazy pro Windows
 
