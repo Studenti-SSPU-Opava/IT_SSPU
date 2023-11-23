@@ -150,6 +150,29 @@ sudo vi /etc/ssh/sshd_config.d/50-cloud-init.conf
 scp "zdrojová cesta serveru/PC" "cílová složka serveru/PC"
 ```
 
+##### Přidání uživatele (jako root)
+
+```
+adduser "nazevUzivatele"
+```
+
+##### Odebrání uživatele (jako root)
+
+```
+deluser "nazevUzivatele"
+```
+
+##### Přidání skupiny pro uživatele (jako root)
+
+```
+usermod -a -G "nazevUzivatele"
+```
+
+##### Odebrání skupiny pro uživatele (jako root)
+
+```
+usermod -G "nazevUzivatele" "nazevUzivatele"
+```
 
 
 # Příkazy pro Windows
