@@ -1,5 +1,5 @@
 # změna adresáře:
-cd /tmp
+cd /tmp\
 # vytvoření pracovního adresáře
 mkdir prace
 # přepnutí do pracovního adresáře
