@@ -1,4 +1,4 @@
-n = 12
+n = 1
 val = 0
 while True:
     if (n == 0):
