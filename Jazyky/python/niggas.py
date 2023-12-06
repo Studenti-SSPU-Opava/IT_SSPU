@@ -7,7 +7,10 @@ while True:
     print("Máte", n, "negrů")
     print("Stiskněte 1 pro koupení negra")
     print("Stiskněte 2 pro ubičování a následnou smrt negra")
-    val = int(input())
+    try: 
+        val = int(input())
+    except:
+        print("Vypadá to že mistr otrokář neumí psát čísla, negři ho ubičovali a zabili (umřel jsi)")
     if (val == 1):
         n += 1
         print("koupili jste si negra.")
@@ -15,6 +18,5 @@ while True:
         n -= 1
         print("Ubičovali a zabili jste negra (zemřel).")
     else:
-        print("Vypadá to že mistr otrokář neumí psát čísla, negři ho ubičovali a zabili (umřel jsi)")
         break
 print("konec hry")

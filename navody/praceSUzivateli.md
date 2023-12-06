@@ -1,4 +1,4 @@
-# Prace s uživately
+# Prace s uživateli
 
 ## Jak se přihlásit jako root(sudo)
 
@@ -36,7 +36,7 @@ groups
 ```
 
 ## Jak vytvořit novou skupinu
-
+praceSUzivately
 ```
 addgroup "jmeno skupiny"
 ```
@@ -79,3 +79,15 @@ chmod 770 /test
   - druhá určuje, jestli můžeme vytvářet a upravovat soubory ve složce
   - třetí určuje, jestli můžeme vidět soubory ve složce
   - příklad: 5(dec) = 101(bin) = r-x = uživatel může vidět a číst soubory ve složce, nemůže je vytvářet ani upravovat   
+
+
+
+
+
+
+
+
+
+
+poznámka:
+díky moc za napsání návodu (bez Davida by tu nebyl! :D )
