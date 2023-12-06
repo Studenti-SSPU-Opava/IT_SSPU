@@ -10,10 +10,10 @@ while True:
     val = int(input())
     if (val == 1):
         n += 1
-        print("koupili jste si negra. Váš aktuální počet negrů je", n)
+        print("koupili jste si negra.")
     elif (val == 2):
         n -= 1
-        print("Ubičovali a zabili jste negra (zemřel). Váš aktuální počet negrů je", n)
+        print("Ubičovali a zabili jste negra (zemřel).")
     else:
         print("Vypadá to že mistr otrokář neumí psát čísla, negři ho ubičovali a zabili (umřel jsi)")
         break
