@@ -13,20 +13,22 @@ val = 0
 
 
 while True:
+    if selectAction == 3:
+        break
     w = choice(weatherTypes) #náhodná volba počasí
     print("(den", str(d) + ")\n" + str(w), "a Vy máte", dollars, "dolarů\nCo dnes hodláte dělat?\n")
 
 
     if selectAction == 0:
         try:
-            selectAction = int(input("Napište číslo:\n\n1 - koupit negry\n2 - Pracovat\n3 - Konec hry"))
+            selectAction = int(input("Napište číslo:\n\n1 - koupit negry\n2 - Pracovat\n3 - Konec hry\n"))
         except:
             print("Otrokář je hloupý, neumí psát čísla")
     else:
         print("Error 0x01: špatné proměnná selectAction")
 
 
-    if selectAction >= 3:
+    if selectAction >= 4:
         print("Zadal jsi číslo mimo rozsah")
     else:
         match selectAction:
