@@ -1,0 +1,25 @@
+* {
+    color: aquamarine;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(168, 148, 123);
+}
+h1, h2, h3 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h1 {
+    color: blue;
+    font-size: 200%;
+}
+h2 {
+    background-color: brown;
+    color: white;
+    font-size: 150%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+h3 {
+    text-align: center;
+    border: 2px solid black;
+}

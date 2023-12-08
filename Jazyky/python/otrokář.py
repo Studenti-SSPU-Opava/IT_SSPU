@@ -4,6 +4,7 @@ from random import randint
 
 n = 0
 d = 1
+p = 0
 w = ""
 weatherTypes = ["Je krásný den", "Je nehezký den", "Leje jako z konve", "Svítí slunce", "Svítí měsíc", "Vybuchují supernovy", "Hoří Vám dům", "Smrdí vám koule", "Padají trakaře"]
 selectAction = 0
@@ -12,22 +13,22 @@ dollars = 20
 
 
 while True:
-    if selectAction == 3: #ukončí hru
+    if selectAction == 4: #ukončí hru
         exit()
 
 
     w = choice(weatherTypes) #náhodná volba počasí
 
-    print("(den", str(d) + ")\n" + str(w), "a Vy máte", dollars, "dolarů\nCo dnes hodláte dělat?\n")
+    print("(den", str(d) + ")\n" + str(w))
         #přivítání
 
 
     if selectAction == 0:
         try:
-            selectAction = int(input("Napište číslo:\n\n1 - koupit negry\n2 - Pracovat\n3 - Konec hry\n")) #vybrání akce
+            selectAction = int(input("Jste doma\nNapište číslo:\n\n1 - Jít na tržiště\n2 - Pracovat\n3 - Jít na bavlnová pole\n4 - Konec hry\n")) #vybrání akce
         except:
             print("Otrokář je hloupý, neumí psát čísla")
-    if selectAction > 3:
+    if selectAction > 4:
         print("Zadal jsi číslo mimo rozsah")
     
     
@@ -53,16 +54,17 @@ while True:
                         
                 match val:
                     case 1:
-                        print("")
+                        print("Jste ve stánku s negry")
                     case 2:
-                        print("")
+                        print("Jste ve stánku se zeleninou")
                     case 3:
-                        print("")
+                        print("Jste ve stánku s masem")
                     case 4:
-                        print("")
+                        print("Jste v bance")
                     case 5:
                         print("")
                     case _:
+                        print("")
 
 
 
@@ -71,9 +73,10 @@ while True:
                 dollars += vydelano
                 print("Vydělali jste", vydelano, "dolarů")
             case 3:
-                break
-        selectAction = 0
-        d += 1
+                if p == 0:
+                    print()
+    selectAction = 0
+    d += 1
 
 
 print("------------------KONEC HRY------------------")
