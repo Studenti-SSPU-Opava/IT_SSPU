@@ -1,259 +1,245 @@
+# Návod na Příkazy
 
-
-
-# Náhled do Příkazů
-
-## Doplnit hodnotu: ""
-## Dobrovolný parametr: <>
+## Vyplnit hodnotu: ""
+## Volitelný parametr: <>
 ## Povinný parametr: []
 
+---
 
+##### Klonovat repozitář z GitHubu
 
+```bash
+git clone https://github.com/"jmeno"/"nazev-repozitare".git // git@github.com:"jmeno"/"nazev-repozitare".git
+```
 
-##### Clone repozitáře z GitHubu
+##### Odeslat změny na GitHub
 
-```git clone https://github.com/"jmeno"/"nazev-repozitare".git // git@github.com:"jmeno"/"nazev-repozitare".git ```
+```bash
+git push ![branch]
+```
 
-##### Nahrát změny na GitHub
+##### Nastavit globální e-mail pro Git
 
-```git push ![branch]```
-
-##### Nastavit globální email pro Git
-```git config --global "user.email"```
+```bash
+git config --global "user.email"
+```
 
 ##### Nastavit globální jméno pro Git
-```git config --global "user.name"```
 
-##### Přidat všechny změny do stage pro commit
-```git add .```
+```bash
+git config --global "user.name"
+```
 
-##### Provést commit s komentářem ke změnám
+##### Přidat všechny změny do přípravy na commit
 
-```git commit```
+```bash
+git add .
+```
+
+##### Provést commit s komentářem k změnám
+
+```bash
+git commit
+```
 
 ##### Stáhnout změny ze vzdáleného repozitáře
-```git pull```
 
-##### Copy ID
-```ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"```
+```bash
+git pull
+```
+
+##### Kopírovat ID
+
+```bash
+ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"
+```
 
 # Příkazy pro Linux
 
 ##### Změnit aktuální složku (Change Directory)
 
-```
+```bash
 cd
 ```
 
 ##### Vytvořit novou složku (Make Directory)
 
-```
+```bash
 mkdir
 ```
 
 ##### Přepnout se na účet root (superuživatel)
 
-```
+```bash
 sudo
 ```
 
 ##### Instalovat balíček pomocí APT
 
-```
+```bash
 sudo apt install
 ```
 
 ##### Aktualizovat seznam dostupných balíčků
 
-```
+```bash
 sudo apt-get update
 ```
 
 ##### Editovat soubor v Midnight Commander (mc)
 
-```
+```bash
 mcedit
 ```
 
 ##### Zobrazit IP adresu v terminálu
 
-```
+```bash
 ip add show
 ```
 
-##### Login pomocí ssh do vzdáleného serveru
+##### Přihlásit se přes SSH na vzdálený server
 
-```
+```bash
 ssh "uzivatelskeJmeno"@"ipAdresaServeru"
 ```
 
-##### Odpojení od ssh serveru
+##### Odhlásit se ze SSH serveru
 
-```
+```bash
 exit
 ```
 
-##### Odpojení od ssh serveru
+##### Hledat instalační balíček
 
-```
-logout
-```
-
-##### Vyhledání instalačního balíčku
-
-```
-apt-cache search "název balíčku"
+```bash
+apt-cache search "nazev balicku"
 ```
 
-##### Zkopírování klíče (souboru) na ssh server
+##### Kopírovat soubor na/vzdálený server nebo z/vzdáleného serveru
 
-```
-ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"
-```
-
-##### Změna uživatelského oprávnění k souboru id_rsa pouze vlastník RW
-
-```
-chmod 600  ~/.ssh/id_rsa
+```bash
+scp "zdrojova cesta serveru/PC" "cilova slozka serveru/PC"
 ```
 
-##### Otevření souboru sshd_config v editoru vi
+##### Přidat uživatele (jako root)
 
-```
-sudo vi /etc/ssh/sshd_config
-```
-
-##### Otevření souboru sshd_config v editoru nano
-
-```
-sudo nano /etc/ssh/sshd_config
-```
-##### Otevření souboru 50-cloud-init.conf v editoru vi
-
-```
-sudo vi /etc/ssh/sshd_config.d/50-cloud-init.conf
-```
-
-##### Kopírování z PC na vzdálený server nebo ze vzdáleného serveru do PC
-
-```
-scp "zdrojová cesta serveru/PC" "cílová složka serveru/PC"
-```
-
-##### Přidání uživatele (jako root)
-
-```
+```bash
 adduser "nazevUzivatele"
 ```
 
-##### Odebrání uživatele (jako root)
+##### Odebrat uživatele (jako root)
 
-```
+```bash
 deluser "nazevUzivatele"
 ```
 
-##### Přidání skupiny pro uživatele (jako root)
+##### Přidat skupinu pro uživatele (jako root)
 
-```
+```bash
 usermod -a -G "nazevUzivatele"
 ```
 
-##### Odebrání skupiny pro uživatele (jako root)
+##### Odebrat skupinu pro uživatele (jako root)
 
-```
+```bash
 usermod -G "nazevUzivatele" "nazevUzivatele"
 ```
 
-##### Přidání skupiny (jako root)
+##### Přidat skupinu (jako root)
 
-```
+```bash
 addgroup "nazevSkupiny"
 ```
 
-##### Odebrání skupiny (jako root)
+##### Odebrat skupinu (jako root)
 
-```
+```bash
 delgroup "nazevSkupiny"
 ```
 
-##### Vytváření souboru
+##### Vytvořit soubor
 
-```
+```bash
 touch "adresar"/"nazevSouboru"
-
-```
-##### změna uživatelského  módu
-
-```
-chown [číslo oprávnění] /[uzivatel]
 ```
 
-##### Změna vlastnictví uživatele
+##### Změnit uživatelská oprávnění
 
+```bash
+chown [cislo opravneni] /[uzivatel]
 ```
+
+##### Změnit vlastnictví uživatele
+
+```bash
 chown [uzivatel].[skupina] /[uzivatel]
 ```
 
-##### Zobrazuje systémové zprávy a umožňuje postupné procházení výstupu stránka po stránce s pomocí nástroje "more"
-```
+##### Zobrazit systémové zprávy s nástrojem "more"
+
+```bash
 dmesg | more
 ```
 
-##### Sleduje obsah posledních řádků textového souboru v reálném čase s možností aktualizace nově přidaných dat
-```
+##### Sledovat obsah posledních řádků souboru v reálném čase
+
+```bash
 tail <-f> 
 ```
 
-##### Zobrazuje začátek textového souboru, výchozím zobrazením je prvních deset řádků.
-```
+##### Zobrazit začátek textového souboru
+
+```bash
 head
 ```
 
-##### Zobrazí logy
-```
+##### Zobrazit logy
+
+```bash
 last
 ```
 
-##### Zabije proces
-```
-kill <-9 - vyhození z operační paměti> <číslo procesu>
+##### Ukončit proces
+
+```bash
+kill <-9 - vyhodit z operační paměti> <cislo procesu>
 ```
 
-<img src="https://github.com/Ferenc1234/operacni-systemy/blob/main/obrazky/child.jpg">
+##### Zobrazit procesy
 
-##### zobrazí procesy
-
-```
+```bash
 ps aux
 ```
 
-##### 
+##### Zobrazit informace o blokových zařízeních
 
-```
+```bash
 lsblk
 ```
 
-##### jedinečné číslo harddisku
+##### Zobrazit jedinečné číslo harddisku
 
-```
+```bash
 blkid
 ```
 
-##### příprava úložiště pro udělání partition
-```
+##### Připravit úložiště pro vytvoření oddílu
+
+```bash
 gparted
 ```
 
-##### 
-```
-mkfs <vfat, ext, ntfs...> <zařízení>
-```
+##### Vytvořit souborový systém
 
+```bash
+mkfs <vfat, ext, ntfs...> <zarizeni>
+```
 
 # Příkazy pro Windows
 
-##### Otevřít příkazový řádek (Command Prompt) - napsat do okénka, které se otevře po zadání Win + R
+##### Otevřít příkazový řádek (Command Prompt)
 
-```
+```bash
 cmd
 ```
