@@ -1,51 +1,41 @@
+
+
+
 # Náhled do Příkazů
+
+## Doplnit hodnotu: ""
+## Dobrovolný parametr: <>
+## Povinný parametr: []
+
+
+
 
 ##### Clone repozitáře z GitHubu
 
-```
-git clone https://github.com/"jmeno"/"nazev-repozitare".git // git@github.com:"jmeno"/"nazev-repozitare".git 
-```
+```git clone https://github.com/"jmeno"/"nazev-repozitare".git // git@github.com:"jmeno"/"nazev-repozitare".git ```
 
 ##### Nahrát změny na GitHub
 
-```
-git push ![branch]
-```
+```git push ![branch]```
 
 ##### Nastavit globální email pro Git
-
-```
-git config --global "user.email"
-```
+```git config --global "user.email"```
 
 ##### Nastavit globální jméno pro Git
-
-```
-git config --global "user.name"
-```
+```git config --global "user.name"```
 
 ##### Přidat všechny změny do stage pro commit
-
-```
-git add .
-```
+```git add .```
 
 ##### Provést commit s komentářem ke změnám
 
-```
-git commit
-```
+```git commit```
 
 ##### Stáhnout změny ze vzdáleného repozitáře
-
-```
-git pull
-```
+```git pull```
 
 ##### Copy ID
-```
-ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"
-```
+```ssh-copy-id "uzivatelskeJmeno"@"ipAdresaServeru"```
 
 # Příkazy pro Linux
 
@@ -194,11 +184,70 @@ touch "adresar"/"nazevSouboru"
 ```
 ##### změna uživatelského  módu
 
+```
 chown [číslo oprávnění] /[uzivatel]
+```
 
 ##### Změna vlastnictví uživatele
 
+```
 chown [uzivatel].[skupina] /[uzivatel]
+```
+
+##### Zobrazuje systémové zprávy a umožňuje postupné procházení výstupu stránka po stránce s pomocí nástroje "more"
+```
+dmesg | more
+```
+
+##### Sleduje obsah posledních řádků textového souboru v reálném čase s možností aktualizace nově přidaných dat
+```
+tail <-f> 
+```
+
+##### Zobrazuje začátek textového souboru, výchozím zobrazením je prvních deset řádků.
+```
+head
+```
+
+##### Zobrazí logy
+```
+last
+```
+
+##### Zabije proces
+```
+kill <-9 - vyhození z operační paměti> <číslo procesu>
+```
+
+<img src="https://github.com/Ferenc1234/operacni-systemy/blob/main/obrazky/child.jpg">
+
+##### zobrazí procesy
+
+```
+ps aux
+```
+
+##### 
+
+```
+lsblk
+```
+
+##### jedinečné číslo harddisku
+
+```
+blkid
+```
+
+##### příprava úložiště pro udělání partition
+```
+gparted
+```
+
+##### 
+```
+mkfs <vfat, ext, ntfs...> <zařízení>
+```
 
 
 # Příkazy pro Windows
