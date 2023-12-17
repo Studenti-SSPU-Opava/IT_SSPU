@@ -235,6 +235,10 @@ gparted
 ```bash
 mkfs <vfat, ext, ntfs...> <zarizeni>
 ```
+##### Vytvořit link
+```bash
+ln
+```
 
 # Příkazy pro Windows
 
