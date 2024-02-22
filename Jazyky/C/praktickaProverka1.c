@@ -45,6 +45,24 @@ int ziskejCas(int poradi){
     return cas;
 }
 
+int opakuj(){
+    char klavesa; 
+    int countOfChar;
+    printf("Chcete zadat cas znovu? Stisknete Z: ");
+    klavesa = getchar();
+    while (getchar() != '\n'){
+        countOfChar++;
+    } 
+    if (countOfChar != 0){
+        return 0;
+    }
+    if (klavesa == 'Z' || klavesa == 'z'){
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 int main()
 {
     int cas1, cas2;
@@ -60,5 +78,9 @@ int main()
     {
         printf("Cas 1 je stejny jako cas 2.\n");
     }
+
+
+    printf("Rozdil mezi casem 1 a casem 2 je %d sekund.\n", abs(cas1 - cas2));
+    opakuj();
     return 0;
 }
