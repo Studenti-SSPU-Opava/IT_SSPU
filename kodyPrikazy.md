@@ -1,3 +1,9 @@
+# ***Plánuje se předělání souboru***
+
+
+
+
+
 # Návod na Příkazy
 
 ## Vyplnit hodnotu: ""
