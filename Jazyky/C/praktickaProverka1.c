@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAX_HOD 23
 #define MAX_MIN_SEC 59
@@ -34,7 +35,8 @@ int sekundyOdPulnoci(int hodiny, int minuty, int sekundy)
     return hodiny * 3600 + minuty * 60 + sekundy;
 }
 
-int ziskejCas(int poradi){
+int ziskejCas(int poradi)
+{
     int hodiny, minuty, sekundy, cas;
     hodiny = vstup("hodiny", poradi, MAX_HOD);
     minuty = vstup("minuty", poradi, MAX_MIN_SEC);
@@ -45,20 +47,26 @@ int ziskejCas(int poradi){
     return cas;
 }
 
-int opakuj(){
-    char klavesa; 
-    int countOfChar;
+int opakuj()
+{
+    int klavesa;
+    int countOfChar = 0;
     printf("Chcete zadat cas znovu? Stisknete Z: ");
     klavesa = getchar();
-    while (getchar() != '\n'){
+    while (getchar() != '\n')
+    {
         countOfChar++;
-    } 
-    if (countOfChar != 0){
+    }
+    if (countOfChar != 0)
+    {
         return 0;
     }
-    if (klavesa == 'Z' || klavesa == 'z'){
+    if (klavesa == 'Z' || klavesa == 'z')
+    {
         return 1;
-    } else {
+    }
+    else
+    {
         return 0;
     }
 }
@@ -66,21 +74,24 @@ int opakuj(){
 int main()
 {
     int cas1, cas2;
-    cas1 = ziskejCas(1);
-    cas2 = ziskejCas(2);
-    if (cas1 > cas2)
+    do
     {
-        printf("Cas 1 je vetsi nez cas 2.\n");  
-    } else if (cas1 < cas2)
-    {
-        printf("Cas 2 je vetsi nez cas 1.\n");
-    } else
-    {
-        printf("Cas 1 je stejny jako cas 2.\n");
-    }
+        cas1 = ziskejCas(1);
+        cas2 = ziskejCas(2);
+        if (cas1 > cas2)
+        {
+            printf("Cas 1 je vetsi nez cas 2.\n");
+        }
+        else if (cas1 < cas2)
+        {
+            printf("Cas 2 je vetsi nez cas 1.\n");
+        }
+        else
+        {
+            printf("Cas 1 je stejny jako cas 2.\n");
+        }
 
-
-    printf("Rozdil mezi casem 1 a casem 2 je %d sekund.\n", abs(cas1 - cas2));
-    opakuj();
+        printf("Rozdil mezi casem 1 a casem 2 je %d sekund.\n", abs(cas1 - cas2));
+    } while (opakuj());
     return 0;
 }
