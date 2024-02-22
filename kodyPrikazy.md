@@ -247,3 +247,34 @@ ln
 ```bash
 cmd
 ```
+
+
+
+
+ps ax   - vypíše všechny aktuální procesy
+ps   - vypíše všechny uživatelovy aktuální procesy
+kill -9 PID   - "zabije" proces
+kill -1   - znovunačtení konfigurace
+kill -l  - vypíše všechny parametry kill
+kill all -9 - zabije všechno
+top - vypíše co v procesech běží (hodnota "wa" je nejdůležitější, je v třetím řádku)
+    - můžete najít co nejvíce žere
+sudo apt install   - instaluje něco
+sudo apt update   - update 
+iotop  - můžete najít co nejvíce zpomaluje pc
+grep - příkaz používaný k vyhledávání a porovnávání textových vzorů v souborech obsažených v regulárních výrazech
+nice, renice - (-20...+19) - nice - umožňuje nakonfigurovat hodnotu nice procesu před jeho spuštěním
+                           - renice - mění hodnotu nice jednoho nebo více běžících procesů
+renice -n 19 4844(
+-n  - změna hodnoty
+19  - hodnota na kterou to změníme 
+4844  - PID procesu
+)
+code .  - spustí vscode
+chmod  -  umožňuje správci nastavit nebo upravit oprávnění souboru
+screen - vytváří virtuální terminál, dá se pak přepínat
+-d  -detach
+-r  -reconect
+nehup  - spuštění příkazu nebo skriptu na pozadí, i když se odhlásíte z aktuální relace
+watch  - může se použít k provádění příkazu v pravidelných intervalech
+sudo   - oprávnění
