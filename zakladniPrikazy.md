@@ -22,4 +22,14 @@
 - **delgroup:** Odebírá skupinu ze systému.
 - **touch:** Aktualizuje časové značky souboru nebo vytváří nový prázdný soubor.
 - **chown:** Mění vlastníka souboru nebo adresáře.
-
+- **cat** Jeho hlavní funkcí je vytisknout obsah jednoho nebo více souborů na standardní výstup (většinou terminál). Může také být používán k vytváření nových souborů nebo k připojení obsahu jednoho souboru na konec jiného.
+- **grep**  Slouží k vyhledávání řetězců v textových souborech nebo výstupu příkazu.
+- **w (who)** Příkaz používaný k zobrazení informací o aktuálně přihlášených uživatelích na systému.
+- **head** Zobrazuje začátek souboru.
+- **tail** Zobrazuje konec souboru.
+- **last** Zobrazuje historii přihlášení, ukazuje, kdo byl přihlášen, kdy se přihlásil a odkud (adresa, ze které se přihlásil).
+- **more** Slouží k zobrazování obsahu textových souborů v terminálu - jednoduchý prohlížeč textu.
+- **dmesg** Slouží k zobrazení záznamů jádra systému (kernel ring buffer).
+- **df** Slouží k zobrazování informací o dostupném diskovém prostoru na souborových systémech
+- **lsblk** Slouží k zobrazování informací o blokových zařízeních na systému. (Bloková zařízení jsou zařízení, která uchovávají a manipulují s daty v blocích, což jsou souvislé části dat o pevné velikosti.)
+- **blkid** Slouží k získání informací o blokových zařízeních, konkrétně k získání identifikátorů souborových systémů přiřazených k daným blokovým zařízením. Tyto identifikátory mohou obsahovat informace o souborovém systému a jeho parametrech.
