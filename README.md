@@ -26,3 +26,9 @@ Díky za spolupráci! 🙌
 - Přidal jsem obrázky do návodu jak commitovat. 
 - Počítám s dalšími updaty návodů pro GitHub
 - Přejmenoval jsem repozitář, aby bylo jasné, že tady bude víc předmětů než jen Operační Systémy
+
+## V 3.0
+
+- Přidal jsem .gitignore, ať tu nedělají zbytečné soubory nepořádek (snad to bude fungovat dobře, kdyžtak to můžete fixnout)
+- Přidal jsem soubory z ATF a některé příklady z PRP
+- Udělal jsem repozitář kde jsou příklady z PVY, sem to nešlo dát, repozitář je zde: [repozitář](https://github.com/ferenc1234/ferenc1234.github.io), náhled zde: [náhled](https://ferenc1234/github.io)
