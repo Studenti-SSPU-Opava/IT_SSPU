@@ -29,6 +29,6 @@ Díky za spolupráci! 🙌
 
 ## V 3.0
 
-- Přidal jsem .gitignore, ať tu nedělají zbytečné soubory nepořádek (snad to bude fungovat dobře, kdyžtak to můžete fixnout)
+- Přidal jsem .gitignore, ať tu nedělají zbytečné soubory nepořádek (snad to bude fungovat dobře, když tak to můžete fixnout)
 - Přidal jsem soubory z ATF a některé příklady z PRP
-- Udělal jsem repozitář kde jsou příklady z PVY, sem to nešlo dát, repozitář je zde: [repozitář](https://github.com/ferenc1234/ferenc1234.github.io), náhled zde: [náhled](https://ferenc1234/github.io)
+- Udělal jsem repozitář kde jsou příklady z PVY, sem to nešlo dát, repozitář je zde: [repozitář](https://github.com/ferenc1234/ferenc1234.github.io), náhled zde: [náhled](https://ferenc1234.github.io)
