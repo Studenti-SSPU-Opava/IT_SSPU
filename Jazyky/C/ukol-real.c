@@ -33,7 +33,7 @@ int dateConvert(int year1, int year2, int month1, int month2, int day1, int day2
     int days = 0;
     
     // Calculate the number of days in each year between year1 and year2
-    for (int year = year1 + 1; year < year2; year++) {
+    for (int year = year1; year < year2; year++) {
         if (leapYear(year)) {
             days += 366;
         } else {
