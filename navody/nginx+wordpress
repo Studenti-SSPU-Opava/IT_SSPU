@@ -1,0 +1,57 @@
+# Jak nainstalovat nginx a wordpress
+## Nainstalujeme potřebné
+```
+sudo apt update 
+sudo apt install nginx php-fpm php-mysql mysql-server php-bz2 php-zip
+```
+## Nakonfigurujeme nginx
+```
+sudo mcedit /etc/nginx/sites-enabled/default
+```
+1. do index přidáme index.php
+2. odkomentujeme 'location ~ \.php$ {'
+3. odkomentujeme 'fastcgi_pass'
+4. odkomentujeme '}', ktera ukoncuje location
+## TO BE CONTINUED
+
+```
+  111  sudo apt-get install bzip2
+  112  bzopen
+  113  apt install php-bz2
+  114  sudo apt install php-bz2
+  115  sudo apt install zip
+  116* sudo systemctl restart ngin
+  117  zip
+  118  sudo apt install php-zip
+  119  sudo apt install ph-mcrypt
+  120  sudo apt install php-mcrypt
+  121  sudo apt install mcrypt
+  122  sudo mysql
+  123  wget https://wordpress.org/latest.zip
+  124  ls
+  125  sudo wget https://wordpress.org/latest.zip
+  126  ls
+  127  unzip latest.zip 
+  128  sudo unzip latest.zip 
+  129  ls
+  130  sudo chown ww-data.www-data wordpress/
+  131  sudo chown www-data.www-data wordpress/
+  132  ls -l
+  133  sudo chown www-data.www-data -R wordpress/
+  134  ls -l
+  135  mcedit /etc/nginx/sites-enabled/default 
+  136  sudo mcedit /etc/nginx/sites-enabled/default 
+  137  systemctl restart nginx
+  138  sudo systemctl restart nginx
+  139  systemctl status nginx.service
+  140  systemctl status nginx.service
+  141  sudo mcedit /etc/nginx/sites-enabled/default 
+  142  sudo systemctl restart nginx
+  143  sudo mcedit /etc/nginx/sites-enabled/default 
+  144  sudo mcedit /etc/nginx/sites-enabled/default 
+  145  sudo systemctl restart nginx
+  146  sudo mcedit /etc/nginx/sites-enabled/default 
+  147  history
+  148  sudo mcedit /etc/nginx/sites-enabled/default 
+  149  history
+```
