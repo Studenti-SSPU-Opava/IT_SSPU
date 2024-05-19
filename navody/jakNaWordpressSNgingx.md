@@ -15,6 +15,7 @@ sudo mcedit /etc/nginx/sites-enabled/default
 
 ## Přidáme nového uživatele do databáze
 ```
+sudo mysql
 -- vytvoříme nového uživatele
 -- můžete změnit první 'student' za vaše uživatelské jméno a druhé 'student' za vaše heslo
 CREATE USER 'student'@'localhost' IDENTIFIED BY 'student';
