@@ -8,50 +8,36 @@ sudo apt install nginx php-fpm php-mysql mysql-server php-bz2 php-zip
 ```
 sudo mcedit /etc/nginx/sites-enabled/default
 ```
-1. do index přidáme index.php
+1. do řádku začínajícího na index přidáme index.php
 2. odkomentujeme 'location ~ \.php$ {'
 3. odkomentujeme 'fastcgi_pass'
 4. odkomentujeme '}', ktera ukoncuje location
-## TO BE CONTINUED
 
+## Přidáme nového uživatele do databáze
 ```
-  111  sudo apt-get install bzip2
-  112  bzopen
-  113  apt install php-bz2
-  114  sudo apt install php-bz2
-  115  sudo apt install zip
-  116* sudo systemctl restart ngin
-  117  zip
-  118  sudo apt install php-zip
-  119  sudo apt install ph-mcrypt
-  120  sudo apt install php-mcrypt
-  121  sudo apt install mcrypt
-  122  sudo mysql
-  123  wget https://wordpress.org/latest.zip
-  124  ls
-  125  sudo wget https://wordpress.org/latest.zip
-  126  ls
-  127  unzip latest.zip 
-  128  sudo unzip latest.zip 
-  129  ls
-  130  sudo chown ww-data.www-data wordpress/
-  131  sudo chown www-data.www-data wordpress/
-  132  ls -l
-  133  sudo chown www-data.www-data -R wordpress/
-  134  ls -l
-  135  mcedit /etc/nginx/sites-enabled/default 
-  136  sudo mcedit /etc/nginx/sites-enabled/default 
-  137  systemctl restart nginx
-  138  sudo systemctl restart nginx
-  139  systemctl status nginx.service
-  140  systemctl status nginx.service
-  141  sudo mcedit /etc/nginx/sites-enabled/default 
-  142  sudo systemctl restart nginx
-  143  sudo mcedit /etc/nginx/sites-enabled/default 
-  144  sudo mcedit /etc/nginx/sites-enabled/default 
-  145  sudo systemctl restart nginx
-  146  sudo mcedit /etc/nginx/sites-enabled/default 
-  147  history
-  148  sudo mcedit /etc/nginx/sites-enabled/default 
-  149  history
+-- vytvoříme nového uživatele
+-- můžete změnit první 'student' za vaše uživatelské jméno a druhé 'student' za vaše heslo
+CREATE USER 'student'@'localhost' IDENTIFIED BY 'student';
+-- dáme mu všechna práva
+-- **TOHLE NEDĚLEJTE POKUD NEMUSÍTE, kdokoliv kdo má přístup k tomuto uživateli může kontrolovat každou databázi na serveru
+GRANT ALL PRIVILEGES ON *.* TO 'sammy'@'localhost' WITH GRANT OPTION;
+-- pro jistotu znovu načteme práva uživatelů
+FLUSH PRIVILEGES;
+exit
 ```
+## Instalace a konfigurace wordpressu
+```
+cd /tmp
+# stáhneme wordpress
+wget https://wordpress.org/latest.zip
+# unzipneme ho
+sudo unzip latest.zip
+# přesuneme wordpres do /var/www/html
+sudo mv wordpress/ /var/www/html/
+cd /var/www/html
+# změníme vlastníka
+sudo chown www-data.www-data -R wordpress/
+# restartujeme nginx
+sudo systemctl restart nginx
+```
+## Stránka by měla běžet na ip adrese vašeho server
