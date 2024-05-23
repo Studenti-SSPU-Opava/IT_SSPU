@@ -80,29 +80,15 @@ int main() {
     int daysApart;
 
     // Get input for both dates, the first three cycles are then added to date 1 and the last three to date 2
-    for (int i = 0; i < 6; i++){
-        switch (i)
-        {
-        case 0:
-            date1.year = input("year", MIN, MAX);
-            break;
-        case 1:
-            date1.month = input("month", 1, 12);
-            break;  
-        case 2:
-            date1.day = input("day", 1, daysInMonth(date1.month, date1.year));
-            break;
-        case 3:
-            date2.year = input("year", MIN, MAX);
-            break;
-        case 4:
-            date2.month = input("month", 1, 12);
-            break;
-        case 5:
-            date2.day = input("day", 1, daysInMonth(date2.month, date2.year));
-            break;          
-        }
-    }
+    date1.year = input("year", MIN, MAX);
+    date1.month = input("month", 1, 12);
+    date1.day = input("day", 1, daysInMonth(date1.month, date1.year));
+
+    date2.year = input("year", MIN, MAX);
+    date2.month = input("month", 1, 12);
+    date2.day = input("day", 1, daysInMonth(date2.month, date2.year));
+
+
     printf("The first date is: %d/%d/%d\n", date1.year, date1.month, date1.day);
     printf("The second date is: %d/%d/%d\n", date2.year, date2.month, date2.day);
 
