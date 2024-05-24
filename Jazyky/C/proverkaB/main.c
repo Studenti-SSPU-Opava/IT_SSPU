@@ -20,6 +20,18 @@ void hlavickaVystup(FILE *vystup){
     fprintf(vystup, "--------------------------------------------------------\n");
 }
 
+int prvocislo(int cislo){
+    if (cislo < 2) {
+        return 0;
+    }
+    for (int i = 2; i < cislo; i++) {
+        if (cislo % i == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
+
 int mocnina(int zaklad, int exponent){
     int vysledek = 1;
     for (int i = 0; i < exponent; i++) {
@@ -41,11 +53,13 @@ int main(){
             printf("File %s has had an error opening.\n", VYSTUP);
         }
         hlavickaProgram();
+        hlavickaVystup(vystup);
         while (fscanf(cisla, "%5d%5d", &cislo.zaklad, &cislo.exponent) == 2) {
             poradi++;
             printf("%5d.   %5d     %5d    %5d\n", poradi, cislo.zaklad, cislo.exponent, mocnina(cislo.zaklad, cislo.exponent));
-            hlavickaVystup(vystup);
-            //fprintf(vystup, "%5d.   %5d     %5d    %5d\n", poradi, cislo.zaklad, cislo.exponent, mocnina(cislo.zaklad, cislo.exponent));
+            if (prvocislo(cislo.zaklad) == 1) {
+            fprintf(vystup, "%5d.   %5d     %5d    %5d\n", poradi, cislo.zaklad, cislo.exponent, mocnina(cislo.zaklad, cislo.exponent));
+            }
         }
 
 
