@@ -3,6 +3,12 @@
 #define MIN 1800
 #define MAX 2100
 
+typedef struct {
+    int day;
+    int month;
+    int year;
+} DATE;
+
 int leapYear(int year) {
     return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
 }
@@ -47,7 +53,7 @@ int input(char *prompt, int min, int max) {
     int buffer;
     int num;
 
-do{
+do {
     printf("Enter the %s(%d-%d):", prompt, min, max);
     scanf("%d", &num);
 
@@ -62,14 +68,32 @@ do{
     } else if (num < min || num > max) {
         printf("Invalid input. Please try again.\n");
     } 
-}while (/* condition */)
-{
-    /* code */
-}
+    } while (buffer != 0 || num < min || num > max);
 
     return num;
 }
+
+
 int main() {
-    printf("Hello, World!\n");
+    DATE date1;
+    DATE date2;
+    int daysApart;
+
+    // Get input for both dates, the first three cycles are then added to date 1 and the last three to date 2
+    date1.year = input("year", MIN, MAX);
+    date1.month = input("month", 1, 12);
+    date1.day = input("day", 1, daysInMonth(date1.month, date1.year));
+
+    date2.year = input("year", MIN, MAX);
+    date2.month = input("month", 1, 12);
+    date2.day = input("day", 1, daysInMonth(date2.month, date2.year));
+
+
+    printf("The first date is: %d/%d/%d\n", date1.year, date1.month, date1.day);
+    printf("The second date is: %d/%d/%d\n", date2.year, date2.month, date2.day);
+
+    // Call out the function to convert the dates into days
+    daysApart = dateConvert(date1.year, date2.year, date1.month, date2.month, date1.day, date2.day);
+    printf("These two dates are %d days apart from each other.\n", daysApart);
     return 0;
 }
