@@ -32,3 +32,8 @@ Díky za spolupráci! 🙌
 - Přidal jsem .gitignore, ať tu nedělají zbytečné soubory nepořádek (snad to bude fungovat dobře, když tak to můžete fixnout)
 - Přidal jsem soubory z ATF a některé příklady z PRP
 - Udělal jsem repozitář kde jsou příklady z PVY, sem to nešlo dát, repozitář je zde: [repozitář](https://github.com/ferenc1234/ferenc1234.github.io), náhled zde: [náhled](https://ferenc1234.github.io)
+
+## V 4.0
+
+- Přejmenoval jsem repozitář (jo, zase), jelikož se ho snažím přizpůsobit i do dalších ročníků a i pro studenty jiných ročníků (snad se tím nic nerozbilo).
+- Větev main by měla (snad jsem to udělal dobře) být uzavřená, pro commity si udělejte prosím jiný branch (tutoriál bude).
