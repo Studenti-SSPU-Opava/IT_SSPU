@@ -13,11 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    
+    - name: Run each .c file
+      run: |
+        for file in První\ ročník/Jazyky/C/*.c; do
+          echo "Compiling $file"
+          gcc "$file" -o "${file%.c}.out"
+          if [ $? -eq 0 ]; then
+            echo "Running ${file%.c}.out"
+            ./"${file%.c}.out"
+          else
+            echo "Compilation failed for $file"
+            exit 1
+          fi
+        done
