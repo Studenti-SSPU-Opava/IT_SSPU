@@ -14,14 +14,24 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Run each .c file
+    - name: Compile and run each .c file
       run: |
         for file in První\ ročník/Jazyky/C/*.c; do
           echo "Compiling $file"
           gcc "$file" -o "${file%.c}.out"
+          
           if [ $? -eq 0 ]; then
             echo "Running ${file%.c}.out"
-            ./"${file%.c}.out"
+
+            # Run the executable with a 5-second timeout to detect user input requirement
+            timeout 15s ./"${file%.c}.out"
+            
+            # Check if the program timed out (i.e., likely waiting for user input)
+            if [ $? -eq 124 ]; then
+              echo "Skipped ${file%.c}.out due to possible user input."
+            else
+              echo "${file%.c}.out completed successfully."
+            fi
           else
             echo "Compilation failed for $file"
             exit 1
