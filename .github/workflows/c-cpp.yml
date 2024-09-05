@@ -1,0 +1,29 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Run each .c file
+      run: |
+        for file in První\ ročník/Jazyky/C/*.c; do
+          echo "Compiling $file"
+          gcc "$file" -o "${file%.c}.out"
+          if [ $? -eq 0 ]; then
+            echo "Running ${file%.c}.out"
+            ./"${file%.c}.out"
+          else
+            echo "Compilation failed for $file"
+            exit 1
+          fi
+        done
