@@ -24,13 +24,17 @@ jobs:
             echo "Running ${file%.c}.out"
 
             # Run the executable with a 5-second timeout to detect user input requirement
-            timeout 15s ./"${file%.c}.out"
+            timeout 5s ./"${file%.c}.out"
             
-            # Check if the program timed out (i.e., likely waiting for user input)
-            if [ $? -eq 124 ]; then
-              echo "Skipped ${file%.c}.out due to possible user input."
-            else
+            # Capture the exit code
+            exit_code=$?
+            
+            if [ $exit_code -eq 124 ]; then
+              echo "Skipped ${file%.c}.out due to possible user input (timeout)."
+            elif [ $exit_code -eq 0 ]; then
               echo "${file%.c}.out completed successfully."
+            else
+              echo "${file%.c}.out failed with exit code $exit_code."
             fi
           else
             echo "Compilation failed for $file"
