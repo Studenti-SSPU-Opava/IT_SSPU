@@ -1,3 +1,6 @@
+//TODO: fix this file
+
+/*
 #include <stdio.h>
 
 int vstup(const char *text, int ktery){
@@ -54,3 +57,4 @@ int main() {
 
     return 0;
 }
+*/
