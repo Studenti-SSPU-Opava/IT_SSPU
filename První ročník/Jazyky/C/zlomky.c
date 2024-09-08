@@ -1,5 +1,9 @@
 //TODO: fix this file
 
+int main() {
+    return 0;
+}
+
 /*
 #include <stdio.h>
 
