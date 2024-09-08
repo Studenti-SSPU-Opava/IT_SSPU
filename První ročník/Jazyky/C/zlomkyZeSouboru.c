@@ -20,8 +20,6 @@ int main() {
         if (fclose(fr) == EOF) {
         printf("Soubor %s se nepodarilo uzavrit.\n", INPUTFILE);
     }
-}
-    
-    return 0;
 
-//test
+    return 0;
+}
