@@ -2,40 +2,47 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Compile and run each .c file
-      run: |
-        for file in První\ ročník/Jazyky/C/*.c; do
-          echo "Compiling $file"
-          gcc "$file" -o "${file%.c}.out"
-          
-          if [ $? -eq 0 ]; then
-            echo "Running ${file%.c}.out"
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-            # Run the executable and redirect stdin from /dev/null to simulate empty input
-            ./"${file%.c}.out" < /dev/null
-            
-            # Capture the exit code
-            exit_code=$?
-            
-            if [ $exit_code -ne 0 ]; then
-              echo "Skipped ${file%.c}.out due to possible user input or error."
-            else
-              echo "${file%.c}.out completed successfully."
-            fi
+    - name: Install GCC
+      run: sudo apt-get install gcc
+
+    - name: Compile Each C File into a Binary
+      run: |
+        for file in *.c; do
+          filename=$(basename -- "$file" .c)
+          gcc "$file" -o "$filename"
+          if [ -f "$filename" ]; then
+            echo "Compilation successful for $file -> $filename"
           else
             echo "Compilation failed for $file"
             exit 1
           fi
         done
+
+    - name: Verify All Binaries Exist
+      run: |
+        for file in *.c; do
+          filename=$(basename -- "$file" .c)
+          if [ -f "$filename" ]; then
+            echo "Binary $filename exists."
+          else
+            echo "Binary $filename does not exist."
+            exit 1
+          fi
+        done
+
+    - name: Output Success Message
+      run: echo "All binaries were compiled successfully."
