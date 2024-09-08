@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int vstup(const char *text, int *ktery){
+int vstup(const char *text, int ktery){
     
     int bufferCount = 0;
     int cislo;
