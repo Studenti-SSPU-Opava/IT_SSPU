@@ -19,13 +19,14 @@ jobs:
     - name: Install GCC
       run: sudo apt-get install gcc
 
-    - name: Compile Each C File into a Binary
+    - name: Compile All C Files in Subdirectories
       run: |
-        for file in *.c; do
+        find . -name "*.c" | while read -r file; do
+          dir=$(dirname -- "$file")
           filename=$(basename -- "$file" .c)
-          gcc "$file" -o "$filename"
-          if [ -f "$filename" ]; then
-            echo "Compilation successful for $file -> $filename"
+          gcc "$file" -o "$dir/$filename"
+          if [ -f "$dir/$filename" ]; then
+            echo "Compilation successful for $file -> $dir/$filename"
           else
             echo "Compilation failed for $file"
             exit 1
@@ -34,12 +35,13 @@ jobs:
 
     - name: Verify All Binaries Exist
       run: |
-        for file in *.c; do
+        find . -name "*.c" | while read -r file; do
+          dir=$(dirname -- "$file")
           filename=$(basename -- "$file" .c)
-          if [ -f "$filename" ]; then
-            echo "Binary $filename exists."
+          if [ -f "$dir/$filename" ]; then
+            echo "Binary $dir/$filename exists."
           else
-            echo "Binary $filename does not exist."
+            echo "Binary $dir/$filename does not exist."
             exit 1
           fi
         done
