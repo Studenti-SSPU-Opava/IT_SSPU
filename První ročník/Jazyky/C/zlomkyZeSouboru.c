@@ -18,7 +18,8 @@ int main() {
             printf("Zlomek 1: %d/%d Zlomek 2: %d/%d\n", z1.citatel, z1.jmenovatel, z2.citatel, z2.jmenovatel);
         }
         if (fclose(fr) == EOF) {
-        printf("Soubor %s se nepodarilo uzavrit.\n", INPUTFILE);
+            printf("Soubor %s se nepodarilo uzavrit.\n", INPUTFILE);
+        }
     }
 
     return 0;
