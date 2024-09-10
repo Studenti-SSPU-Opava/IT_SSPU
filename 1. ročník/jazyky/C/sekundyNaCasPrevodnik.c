@@ -1,3 +1,16 @@
+/*
+ * sekundyNaCasPrevodnik.c ver. 1.0
+ * 
+ * Příklad 4 se sbírky úloh PRP
+ * ----------------------------
+ * 
+ * Zeptá se na počet sekund a převede je na HH-MM-SS
+ * =================================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 
 #define MIN 1

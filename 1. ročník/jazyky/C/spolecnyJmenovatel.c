@@ -1,3 +1,14 @@
+/*
+ * spolecnyJmenovatel.c ver. 1.0
+ * 
+ * Zeptá se na dve čísla a najde 
+ * prvního společného jmenovatele
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 
 int input(int order)

@@ -1,3 +1,15 @@
+/*
+ * hadaniCisla.c ver. 1.0
+ * 
+ * Vygeneruje náhodné číslo od 1 do 10,
+ * ptá se uživatele dokud neuhodne správně
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

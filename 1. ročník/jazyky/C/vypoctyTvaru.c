@@ -1,3 +1,17 @@
+/*
+ * vypoctyTvaru.c ver. 1.0
+ *
+ * Úkol 104 z PRP
+ * ---------------
+ * 
+ * Program se zeptá jaký typ výpočtu chce
+ * uživatel počítat a vypočítá jej
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 #include <math.h>
 
@@ -34,6 +48,7 @@ int main()
             printf("Chybna volba, zadej znovu.\n");
         }
     } while (volba < 1 || volba > POCETVOLEB);
+
     switch (volba)
     {
     case 1:
@@ -54,7 +69,6 @@ int main()
     case 6:
         printf("Program bude ukoncen.\n");
         break;
-    default:
     }
 
     return 0;

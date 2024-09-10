@@ -1,3 +1,15 @@
+/*
+ * hladinyValcu.c ver. 1.0
+ * 
+ * Vezme rozměry a výšky hladin ze souboru, 
+ * vypočítá výšku hladiny a uloží hodnoty 
+ * do souboru
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>

@@ -1,3 +1,15 @@
+/*
+ * zadejtePin.c ver. 1.0
+ * 
+ * "Hádání" pinu, uživatel má omezený 
+ * počet pokusů, po vyčerpání pokusů 
+ * program skončí
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 
 #define PIN 1234

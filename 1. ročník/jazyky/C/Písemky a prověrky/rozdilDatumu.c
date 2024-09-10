@@ -1,3 +1,19 @@
+/*
+ * rozdilDatumu.c ver. 1.0
+ * 
+ * Spočítá rozdíl dvou datumů vee dnech
+ * ====================================
+ *
+ * 2023
+ * 
+ */
+
+
+// POZNÁMKA: Ten köd je strašně nečitelný a otřesný. Nevím jestli to není někde stažené nebo přes AI.
+//           Pokud na to má někdo nervy, klidně to přepište. (Pokud si to Eliáš chce upravit tak prosím, je to jeho práce :D )
+//              - F. Rubáček
+
+
 #include <stdio.h>
 
 #define MIN 1800

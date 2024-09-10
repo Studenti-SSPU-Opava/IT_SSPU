@@ -1,4 +1,18 @@
-//ukol z programovani 104
+/*
+ * cyklyPole.c ver. 1.0
+ *
+ * Úkol 104 z PRP
+ * ---------------
+ * 
+ * Program vygeneruje náhodný
+ * počet znaků a poté je spočítá 
+ * a vypíše na konzoli
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 
 #include <stdio.h>
 #include <stdlib.h>

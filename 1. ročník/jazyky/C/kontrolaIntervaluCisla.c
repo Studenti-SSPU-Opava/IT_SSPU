@@ -1,7 +1,18 @@
+/*
+ * kontrolaIntervaluCisla.c ver. 1.0
+ * 
+ * Zeptá se uživatele na vstup a zkontroluje zda
+ * je v intervalu MIN - MAX
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 
-#define MIN 1
-#define MAX 100
+#define MIN 1            // nastaví minimalní interval
+#define MAX 100          // nastaví maximální interval
 
 int main() {
     int zadaneCislo, countOfChar;

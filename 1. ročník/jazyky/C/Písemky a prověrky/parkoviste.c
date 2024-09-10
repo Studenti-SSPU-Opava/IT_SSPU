@@ -1,3 +1,14 @@
+/*
+ * parkoviste.c ver. 1.0
+ * 
+ * Program sloužící stejně jako parkovací hodiny
+ * ===============================================
+ *
+ * 2023
+ * 
+ */
+
+
 #include <stdio.h>
 
 #define ZDARMA 2
