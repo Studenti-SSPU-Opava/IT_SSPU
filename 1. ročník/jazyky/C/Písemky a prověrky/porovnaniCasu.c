@@ -1,3 +1,15 @@
+/*
+ * porovnaniCasu.c ver. 1.0
+ * 
+ * Zeptá se na 2 časy v jednom dni, zobrazí 
+ * počet sekund od půlnoci u každého času 
+ * a zobrazí jejich rozdíl v sekundách
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

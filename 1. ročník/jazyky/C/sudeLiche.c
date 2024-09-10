@@ -1,3 +1,13 @@
+/*
+ * sudeLiche.c ver. 1.0
+ * 
+ * Zeptá se na vstup a zjistí sudost nebo lichost
+ * ==============================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 
 int main() {

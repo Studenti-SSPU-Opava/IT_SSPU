@@ -20,7 +20,13 @@ Díky za spolupráci! 🙌
 
 # CHANGELOG:
 
+## V 5.0
+
+- Složky byly přeaunuty do ročníků.
+- Přidané workflow na automatickou kompilaci a kontrolu souborů.
+
 ## V 4.0
+
 - Přejmenoval jsem repozitář (jo, zase), jelikož se ho snažím přizpůsobit i do dalších ročníků a i pro studenty jiných ročníků (snad se tím nic nerozbilo).
 - Větev main by měla (snad jsem to udělal dobře) být uzavřená, pro commity si udělejte prosím jiný branch a pak pull request (tutoriál bude).
 - Založil jsem organizaci, od teď to budu psát v množném čísle, takže nikdo nebude vědět, že tohle píše franta :D (nebo nikdo jiný ( respektive to bude vědět, když se podívá do commitu, ale to přece nikdo nedělá :joy: ) ) 

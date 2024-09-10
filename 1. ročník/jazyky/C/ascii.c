@@ -1,3 +1,13 @@
+/*
+ * ascii.c ver. 1.0
+ *
+ * Program který vypíše znaky ascii tabulky
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 
 #define POCETPRVKU 256 //definuje konstantu POCETPRVKU

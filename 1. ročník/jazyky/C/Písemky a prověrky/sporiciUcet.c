@@ -1,3 +1,14 @@
+/*
+ * sporiciUcet.c ver. 1.0
+ * 
+ * Zeptá se na částku na účtech a jejich úrokovou míru. 
+ * Vypočítá obnos na konci období.
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
 #include <stdio.h>
 
 float balance = 0;  //set variables

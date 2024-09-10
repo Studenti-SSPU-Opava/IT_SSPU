@@ -1,3 +1,16 @@
+/*
+ * kladneZaporne.c ver. 1.0
+ * 
+ * Ptá se na zadání a zjistí zda je kladné
+ * či záporné s kontrolou bufferu, 
+ * pokud je nula, ukončí program
+ * ========================================
+ *
+ * 2023
+ * 
+ */
+
+
 #include <stdio.h>
 
 int main() {
@@ -5,7 +18,7 @@ int main() {
     int pocetOpakovani = 0; //vytvori promennou s nazvem "pocetOpakovani" s obsahem 0
     // proměnná pro uložení návratové hodnoty funkce scanf
     int returnValue;
-    int countOfChar; // počet znaků ve v/v bufferu
+    int countOfChar; // počet znaků ve i/o bufferu
     do {
         pocetOpakovani++;
         printf("%d Write a whole number:\n(Write 0 for exit)\n", pocetOpakovani);
@@ -13,17 +26,17 @@ int main() {
         *zpetne lomitko: Alt Gr + Q */
         returnValue = scanf("%d", &number); //pocka na zadani uzivatele
         /* Pokud uživatel nezadá celé číslo, funkce scanf vrátí nulu. Zadané znaky zůstanou
-         * ve v/v bufferu. Pokud v/v buffer obsahuje znaky, funkce scanf nepozastaví konzoli,
+         * ve i/o bufferu. Pokud i/o buffer obsahuje znaky, funkce scanf nepozastaví konzoli,
          * uživatel nemá možnost zadat nové číslo. Důsledkem je nekonečný cyklus. */
         printf("Navratova hodnota funkce scanf je %d.\n", returnValue);
-        /* Funkce getchar() přečte jeden znak z v/v bufferu a záveň jej vymaže. Každý uživatelský vstup je
+        /* Funkce getchar() přečte jeden znak z i/o bufferu a záveň jej vymaže. Každý uživatelský vstup je
          * ukončen klávesou Enter ('\n'). Čtení a výmaz znaků probíhá zatímco znak se nerovná klávese Enter. */
         countOfChar = 0; // do proměnné countOfChar uložíme hodnotu 0
         while (getchar() != '\n') {
             /* hodnotu proměnné countOfChar zvýším o jedničku*/
             countOfChar++;
         }
-        printf("Ve v/v bufferu bylo nalezeno %d znaku.\n", countOfChar);
+        printf("Ve i/o bufferu bylo nalezeno %d znaku.\n", countOfChar);
         if (countOfChar != 0) {
             printf("Nezadal jsi cele cislo. Zadej znovu.\n");
         } else if (number > 0) { //pokud je cislo vetsi nez nula
