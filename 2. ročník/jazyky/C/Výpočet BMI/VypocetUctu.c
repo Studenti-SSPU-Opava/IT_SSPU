@@ -45,18 +45,31 @@ int input() {
         } else {
             printf("Castka Prijata.\n");
         }
-    } while (countOfChar != 0 || input < MINVKLAD || input > MAXVKLAD);
+    } while (countOfChar != 0);
     return input;
 }
 
-void writeToFile(FILE *file, int den, int mesic, int rok, int plat) {
-    fprintf(file, "%d.%d.%d %d\n", den, mesic, rok, plat);
+void writeToFile(FILE *file, float input, float inputMonth) {
+    for (int i = 1; i <= 12; i++) {
+        fprintf(file, "%d.%2d.%d\n", daysInMonth(i), i, ROK);
+        fprintf(file, "--------------------------------------\n");
+        fprintf(file, "Datum     | Stav uctu | Urok | Vklad\n");
+        fprintf(file, "--------------------------------------\n");
+        for (int j = 1; j <= daysInMonth(i); j++) {
+            fprintf(file, "%d.%d.%d | %.2f | %.2f | %.2f\n", j, i, ROK, input, input * UROKOVAMIRA / 100 / 365, inputMonth);
+            input += input * UROKOVAMIRA / 100 / 365;
+            if (j == DAN) {
+                input += inputMonth;
+            }
+        }
+        fprintf(file, "--------------------------------------\n");
+    }
 }
 
 void hlavicka(FILE *file, float startInput) {
     float bigInput = input();
-    printf("Sporici ucet, rocni urokova mira %.2f %%\n"
-            "Stav uctu na zacatku roku %d je %.2d\n"
+    fprintf(file, "Sporici ucet, rocni urokova mira %.2f %%\n"
+            "Stav uctu na zacatku roku %d je %.2f\n"
             "--------------------------------------", UROKOVAMIRA, ROK, bigInput);
 }
 
@@ -71,7 +84,7 @@ int main (){
     }
     float inputStart = input();
     hlavicka(file, inputStart);
-    writeToFile(file, 1, 1, ROK, inputStart);
+    writeToFile(file, inputStart, input());
    
 
 
