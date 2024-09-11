@@ -34,11 +34,12 @@ jobs:
     - name: Verify All Compiled Files Exist
       run: |
         find . -name "*.py" | while read -r file; do
-          compiled_file="${file}c"
-          if [ -f "$compiled_file" ]; then
-            echo "Compiled file $compiled_file exists."
+          filename=$(basename -- "$file" .py)
+          compiled_files=$(find . -name "${filename}*.pyc")
+          if [ -n "$compiled_files" ]; then
+            echo "Compiled files for $file exist: $compiled_files"
           else
-            echo "Compiled file $compiled_file does not exist."
+            echo "No compiled files for $file found."
             exit 1
           fi
         done
