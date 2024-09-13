@@ -4,9 +4,8 @@
 function translate() {
     alias trsl="translate"
     if [ $# -eq 0 ]; then 
-    echo "No parameters provided.";
-    fi
+        echo "No parameters provided."
     elif [ $1 -eq 1 ]; then
-        awk -f
+        awk -f script.awk
     fi
 }
