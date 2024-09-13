@@ -1,0 +1,27 @@
+name: Bash CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install ShellCheck
+      run: sudo apt-get install -y shellcheck
+
+    - name: Check All Bash Files in Subdirectories
+      run: |
+        find . -type f -name "*.sh" -print0 | xargs -0 shellcheck
+
+    - name: Output Success Message
+      run: echo "All files were checked successfully."
