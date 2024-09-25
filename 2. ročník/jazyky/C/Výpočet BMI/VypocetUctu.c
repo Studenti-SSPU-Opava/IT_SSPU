@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define UROKOVAMIRA 5.61
-#define MINVKLAD 1000
-#define MAXVKLAD 10000
+#define MINVKLAD 100
+#define MAXVKLAD 100000
 #define DAN 15
 #define ROK 2024
 #define SOUBOR "vypisUctu.txt"
@@ -45,7 +45,7 @@ int input() {
         } else {
             printf("Castka Prijata.\n");
         }
-    } while (countOfChar != 0);
+    } while (countOfChar != 0 || input < MINVKLAD || input > MAXVKLAD);
     return input;
 }
 
@@ -73,7 +73,9 @@ void hlavicka(FILE *file, float startInput) {
             "--------------------------------------", UROKOVAMIRA, ROK, bigInput);
 }
 
-
+double vypocetUroku(double vklad, double urokovaMira, int pocetDni) {
+    return vklad * urokovaMira / 100 / 12;
+}
 
 int main (){
     int mesic, den, plat;
