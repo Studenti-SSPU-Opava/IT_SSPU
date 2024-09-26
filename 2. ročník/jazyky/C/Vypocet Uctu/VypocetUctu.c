@@ -51,12 +51,12 @@ int input() {
 
 void writeToFile(FILE *file, float input, float inputMonth) {
     for (int i = 1; i <= 12; i++) {
-        fprintf(file, "%d.%2d.%d\n", daysInMonth(i), i, ROK);
+        fprintf(file, "%2d.%2d.%2d\n", daysInMonth(i), i, ROK);
         fprintf(file, "--------------------------------------\n");
-        fprintf(file, "Datum     | Stav uctu | Urok | Vklad\n");
+        fprintf(file, "   Datum  | Stav uctu | Urok | Vklad\n");
         fprintf(file, "--------------------------------------\n");
         for (int j = 1; j <= daysInMonth(i); j++) {
-            fprintf(file, "%d.%d.%d | %.2f | %.2f | %.2f\n", j, i, ROK, input, input * UROKOVAMIRA / 100 / 365, inputMonth);
+            fprintf(file, "%2d.%2d.%2d | %.2f | %.2f | %.2f\n", j, i, ROK, input, input * UROKOVAMIRA / 100 / 365, inputMonth);
             input += input * UROKOVAMIRA / 100 / 365;
             if (j == DAN) {
                 input += inputMonth;
@@ -79,7 +79,7 @@ double vypocetUroku(double vklad, double urokovaMira, int pocetDni) {
 
 int main (){
     int mesic, den, plat;
-    FILE *file = fopen(SOUBOR, "w"); 
+    FILE *file = fopen(SOUBOR,"w"); 
     if (file == NULL) {
         printf("soubor %s se nepodarilo otevrit", SOUBOR);
         return 1;
@@ -88,7 +88,6 @@ int main (){
     hlavicka(file, inputStart);
     writeToFile(file, inputStart, input());
    
-
-
+    
     return 0;
 }
