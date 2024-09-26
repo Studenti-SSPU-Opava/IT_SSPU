@@ -99,6 +99,14 @@ int main (){
     float inputStart = input();
     hlavicka(file, inputStart);
     writeToFile(file, inputStart, input());
+
+    fclose(file);
+    if (file == NULL) {
+        printf("soubor %s se nepodarilo zavrit", SOUBOR);
+        return 1;
+    } else {
+        printf("Vypis uctu byl uspesne ulozen do souboru %s\n", SOUBOR);
+    }
    
     return 0;
 }
