@@ -17,8 +17,17 @@ Podrobnější návod, jak provádět commity, je ve složce "Navody". Zde nalez
 Díky za spolupráci! 🙌
 
 
+## Zobrazovač html souborů:
+[https://studenti-sspu-opava.github.io/IT_SSPU/](https://studenti-sspu-opava.github.io/IT_SSPU/)
+
 
 # CHANGELOG:
+
+## V 6.0
+
+- Přídán workflow na automatické rozjetí webových souborů (HTML, CSS, JS) do github pages
+- Přidány některé HTML soubory pro rozjetí github pages
+- Přidán zobrazovač html stránek [zde](https://studenti-sspu-opava.github.io/IT_SSPU/)
 
 ## V 5.0
 
