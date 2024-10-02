@@ -1,3 +1,12 @@
+/*
+
+Program na vypocet uctu s urokem 
+za cely rok a vkladem kazdy mesic
+
+25.9.2024
+
+*/
+
 #include <stdio.h>
 #define UROKOVAMIRA 5.61
 #define MINVKLAD 100
@@ -6,7 +15,7 @@
 #define ROK 2024
 #define SOUBOR "vypisUctu.txt"
 
-
+// Funkce pro kontrolu přestupného roku
 int leapYear(){
     if (ROK % 4 == 0 && (ROK % 100 != 0 || ROK % 400 == 0)) {
         return 1;
@@ -15,7 +24,7 @@ int leapYear(){
     }
 }
 
-
+// Funkce pro získání počtu dní v měsíci
 int daysInMonth(int month){
     int array [] = {31,28,31,30,31,30,31,31,30,31,30,31};
     if (leapYear() == 1) {
@@ -26,7 +35,7 @@ int daysInMonth(int month){
     return array[month-1];
 }
 
-
+// Funkce pro vstup uživatele
 int input() {
     int input, countOfChar;
     
@@ -49,14 +58,15 @@ int input() {
     return input;
 }
 
+// Funkce pro zápis do souboru
 void writeToFile(FILE *file, float input, float inputMonth) {
     for (int i = 1; i <= 12; i++) {
-        fprintf(file, "%d.%2d.%d\n", daysInMonth(i), i, ROK);
+        fprintf(file, "%2d.%2d.%2d\n", daysInMonth(i), i, ROK);
         fprintf(file, "--------------------------------------\n");
-        fprintf(file, "Datum     | Stav uctu | Urok | Vklad\n");
+        fprintf(file, "   Datum  | Stav uctu | Urok | Vklad\n");
         fprintf(file, "--------------------------------------\n");
         for (int j = 1; j <= daysInMonth(i); j++) {
-            fprintf(file, "%d.%d.%d | %.2f | %.2f | %.2f\n", j, i, ROK, input, input * UROKOVAMIRA / 100 / 365, inputMonth);
+            fprintf(file, "%2d.%2d.%2d | %.2f | %.2f | %.2f\n", j, i, ROK, input, input * UROKOVAMIRA / 100 / 365, inputMonth);
             input += input * UROKOVAMIRA / 100 / 365;
             if (j == DAN) {
                 input += inputMonth;
@@ -66,6 +76,7 @@ void writeToFile(FILE *file, float input, float inputMonth) {
     }
 }
 
+// Funkce pro zápis hlavičky do souboru
 void hlavicka(FILE *file, float startInput) {
     float bigInput = input();
     fprintf(file, "Sporici ucet, rocni urokova mira %.2f %%\n"
@@ -73,13 +84,14 @@ void hlavicka(FILE *file, float startInput) {
             "--------------------------------------", UROKOVAMIRA, ROK, bigInput);
 }
 
+// Funkce pro výpočet úroku
 double vypocetUroku(double vklad, double urokovaMira, int pocetDni) {
     return vklad * urokovaMira / 100 / 12;
 }
 
 int main (){
     int mesic, den, plat;
-    FILE *file = fopen(SOUBOR, "w"); 
+    FILE *file = fopen(SOUBOR,"w"); 
     if (file == NULL) {
         printf("soubor %s se nepodarilo otevrit", SOUBOR);
         return 1;
@@ -87,8 +99,14 @@ int main (){
     float inputStart = input();
     hlavicka(file, inputStart);
     writeToFile(file, inputStart, input());
+
+    fclose(file);
+    if (file == NULL) {
+        printf("soubor %s se nepodarilo zavrit", SOUBOR);
+        return 1;
+    } else {
+        printf("Vypis uctu byl uspesne ulozen do souboru %s\n", SOUBOR);
+    }
    
-
-
     return 0;
 }
