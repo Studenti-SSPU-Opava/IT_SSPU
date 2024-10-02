@@ -2,10 +2,13 @@ Vypis delitelnych cisel ze souboru cisla.txt
 --------------------------------------------
 poradi  cislo1	cislo2	nsn	nsd
 1.      18       6      18   6
-3.      81      66    1782   3
-4.      92      28     644   4
-5.      15      25      75   5
-7.      52      90    2340   2
-13.      33      15     165   3
-14.      92      62    2852   2
-15.      23      92      92  23
+2.      81      66    1782   3
+3.      92      28     644   4
+4.      15      25      75   5
+5.      52      90    2340   2
+6.      33      15     165   3
+7.      92      62    2852   2
+8.      23      92      92  23
+Prumer cisel v prvnim sloupci je: 50.75
+
+Soubor cisla.txt obsahuje 8 dvojic cisel
