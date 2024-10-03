@@ -2,6 +2,11 @@ name: HTML check
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 
 jobs:
@@ -10,6 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2 # Requried will all actions
     - name: Checks HTML5
-      uses: Cyb3r-Jak3/html5validator-action
+      uses: Cyb3r-Jak3/html5validator-action@7.2.0
       with:
         root: .
