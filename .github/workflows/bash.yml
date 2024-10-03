@@ -1,4 +1,4 @@
-name: Bash CI
+name: Bash check
 
 on:
   push:
