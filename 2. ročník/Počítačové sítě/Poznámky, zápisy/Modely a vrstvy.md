@@ -1,8 +1,9 @@
-Nejnovější verze zápisu vždy na: https://github.com/Shadow1088/SchoolNotes/blob/main/sitarina/jednoduse/ISO-OSI.md
+# Nejnovější verze zápisu vždy na: https://github.com/Shadow1088/SchoolNotes/blob/main/sitarina/jednoduse/ISO-OSI.md
+<br><br>
+--------------------------------------------------------------
+<br><br>
 
-<a href="https://github.com/Shadow1088/SchoolNotes/blob/main/sitarina/jednoduse/ISO-OSI.md" style="display: inline-block; padding: 20px; color: white; text-align: left; text-decoration: none; border-radius: 5px; border: 2px solid white;">
-
-    -> Lukas Jarnot IT2
+-> Lukas Jarnot IT2
 
 Kdyz na instagram posilame nove storycko, jak to funguje? 
 
@@ -66,17 +67,27 @@ V tuhle chvili nas packet vypada takhle: { MAC header } { IP Header } { TCP Head
 1․ Fyzicka (Physical layer) - nas frame je converted na bity (jednicky a nuly) a kabely se posle - bud elektricky, svetlem, radiovym signalem - zavisi na nasem mediu pres ktery ho prenasime, bud fiber-optic (svetelny kabel), normalni ethernetovy kabel RJ-45 a tak, anebo pres Wi-Fi (radiovym signalem)
 
 
->> PAMATUJ, ze jak mame enkapsulaci (proces kde kazda vrstva nejak data obali) ma taky svuj opak - dekapsulace. Kdyz posilame, jdeme od vrstvy k vrstve smerem dolu, kdyz nase storycko Instagram prijima, jde od vrstvy k vrstve smerem nahoru. Ve fyzicke to prijima, a dal to ROZBALUJE (dekapsulace) s kazdou dalsi vrstvou. Sitova vrstva si rozbali svoje, transportni si rozbali svoje
+>> PAMATUJ, ze jak mame enkapsulaci (proces kde kazda vrstva nejak data obali) ma taky svuj opak - dekapsulace. Kdyz posilame, jdeme od vrstvy k vrstve smerem dolu, kdyz nase storycko Instagram prijima, jde od vrstvy k vrstve smerem nahoru. Ve fyzicke to prijima, a dal to ROZBALUJE (dekapsulace) s kazdou dalsi vrstvou. Sitova vrstva si rozbali svoje, transportni si rozbali svoje..
 
 
-TCP/IP - (tyy cii pii aj pii) - OSI model je pomyslny a rika nam JAK ASI BY TO MELO FUNGOVAT, TCP/IP je uz skutecny system jak to funguje a je zalozeny prave na OSI, ma CTYRI vrstvy
 
-1․ Aplikacni (obsahuje Aplikacni, Prezentacni a Relacni z OSI, ty tri shrnul do jedne)
 
-2․ Transportni - stejne jako z OSI
 
-3․ Sitova - Stejne jako z OSI
 
-4․ Vrstva sitoveho rozhrani - dlouhy nazev ale jsou to vlastne Linkova a Fyzicka z OSI dohromady
+TCP/IP - (tyy cii pii aj pii) - OSI model je pomyslny a rika nam JAK ASI BY TO MELO FUNGOVAT, TCP/IP je uz skutecny system jak to funguje a je zalozeny prave na OSI, ma CTYRI vrstvy 
+- Aplikacni (obsahuje Aplikacni, Prezentacni a Relacni z OSI, ty tri shrnul do jedne)
 
-</a>
+
+- Transportni - stejne jako z OSI
+
+
+- Sitova - Stejne jako z OSI
+
+
+- Vrstva sitoveho rozhrani - dlouhy nazev ale jsou to vlastne Linkova a Fyzicka z OSI dohromady
+
+
+
+<br><br>
+
+ ### Poznámka maintainera: soubor bude pravděpodobně mírně předělán, pro lepší čitelnost, text zůstane stejný. Potřeba zeptat se autora textu zda to bude možné.
