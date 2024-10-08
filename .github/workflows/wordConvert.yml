@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
-
 
 jobs:
   convert:
@@ -25,19 +23,40 @@ jobs:
 
       - name: Convert DOCX to Markdown
         run: |
+          # Loop through all .docx files
           for file in **/*.docx; do
             # Get the filename without extension
             filename="${file%.docx}"
-            # Convert to Markdown
-            pandoc "$file" -t markdown -o "${filename}.md"
+            markdown_file="${filename}.md"
+
+            # Check if the markdown file already exists
+            if [ -f "$markdown_file" ]; then
+              echo "Markdown file $markdown_file already exists. Skipping conversion."
+            else
+              # Convert to Markdown
+              pandoc "$file" -t markdown -o "$markdown_file"
+              echo "Converted $file to $markdown_file."
+            fi
           done
+
+      - name: Verify converted files
+        run: |
+          # Check for converted Markdown files
+          markdown_files=$(find . -name '*.md')
+          if [ -z "$markdown_files" ]; then
+            echo "No Markdown files were created."
+            exit 1
+          else
+            echo "Converted Markdown files:"
+            echo "$markdown_files"
+          fi
 
       - name: Commit and push converted files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add '**/*.md'
-          git commit -m "Convert DOCX to Markdown"
+          git commit -m "Convert DOCX to Markdown" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
