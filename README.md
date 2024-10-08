@@ -1,27 +1,23 @@
 # 📚 Vítejte v tomto repozitáři!
 
-V tomto repozitáři najdete vše, co potřebujeme do školy.
-
-### 👉 **Důležité upozornění:**
-
-Pokud spolužákům (a možná i budoucím studentům) chcete ulehčit práci, můžete provést commit přímo do tohoto repozitáře! 😄
+V tomto repozitáři najdete vše, co jsme dělali ve škole, narazíte tu i na drobné studentské projekty, zápisy a podobně.<br>
+Snažíme se tento repositář udělat vhodným místem pro studium a pro odkládání souborů, které by mohly sloužit i ostatním.
 
 ### 💡 Jak provádět commity
-
-Pro vkládání změn do tohoto repozitáře nebudete potřebovat žádný klíč. Stačí zadat své přihlašovací údaje na GitHub do Visual Studio Code (VS Code).
+WIP - bude přidáno později, na wiki se pracuje
 
 ### 📋 Návod k commitování
-
-Podrobnější návod, jak provádět commity, je ve složce "Navody". Zde naleznete podrobný návod k tomu, jak na to. 🚀
-
-Díky za spolupráci! 🙌
+WIP
 
 
-## Zobrazovač html souborů:
+### Zobrazovač html souborů:
 [https://studenti-sspu-opava.github.io/IT_SSPU/](https://studenti-sspu-opava.github.io/IT_SSPU/)
-
+<br><br><br><br>
 
 # CHANGELOG:
+<br>
+
+
 
 ## V 6.0
 
