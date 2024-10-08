@@ -23,8 +23,8 @@ jobs:
 
       - name: Convert DOCX to Markdown
         run: |
-          # Loop through all .docx files
-          for file in **/*.docx; do
+          # Find all .docx files and loop through them
+          find . -name '*.docx' | while read -r file; do
             # Get the filename without extension
             filename="${file%.docx}"
             markdown_file="${filename}.md"
