@@ -4,13 +4,11 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '**/*.docx'  # Trigger on any .docx file changes
+
   pull_request:
     branches:
       - main
-    paths:
-      - '**/*.docx'  # Trigger on any .docx file changes
+
 
 jobs:
   convert:
