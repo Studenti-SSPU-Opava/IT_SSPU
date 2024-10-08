@@ -1,16 +1,40 @@
-name: Convert word files into mardown
+name: Convert DOCX to Markdown
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+    paths:
+      - '**/*.docx'  # Trigger on any .docx file changes
+
 jobs:
-  convert_via_pandoc:
-    runs-on: ubuntu-22.04
+  convert:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: docker://pandoc/core:2.9
-        with:
-          args: "--help" # gets appended to pandoc command
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Convert DOCX to Markdown
+        run: |
+          for file in **/*.docx; do
+            # Get the filename without extension
+            filename="${file%.docx}"
+            # Convert to Markdown
+            pandoc "$file" -t markdown -o "${filename}.md"
+          done
+
+      - name: Commit and push converted files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add '**/*.md'
+          git commit -m "Convert DOCX to Markdown"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
