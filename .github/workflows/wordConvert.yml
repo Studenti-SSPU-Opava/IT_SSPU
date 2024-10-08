@@ -1,0 +1,16 @@
+name: Convert word files into mardown
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: docker://pandoc/core:2.9
+        with:
+          args: "--help" # gets appended to pandoc command
