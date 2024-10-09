@@ -1,11 +1,14 @@
 /*
-
-Program na vypocet uctu s urokem 
-za cely rok a vkladem kazdy mesic
-
-25.9.2024
-
-*/
+ * VypocetUctu.c ver. 1.1
+ *
+ * Program na vypocet uctu s urokem 
+ * za cely rok a vkladem kazdy mesic
+ * =================================
+ *
+ * v1.0 - Elias Constantine - 25.9.2024 
+ * v1.1 - František Rubáček - 9.10.2024 - upravil jsem köd pro výpis do souboru pro lepší čitelnost, spravený uživatelský vstup
+ * 
+ */
 
 #include <stdio.h>
 #define UROKOVAMIRA 5.61 // Úroková míra
@@ -36,12 +39,26 @@ int daysInMonth(int month){
 }
 
 // Funkce pro vstup uživatele
-int input() {
+int input(int vstup) {
     int input, countOfChar;
     
     do {
         countOfChar = 0;
-        printf("Zadejte mesicni plat:\n");
+        switch (vstup)
+        {
+        case 1:
+            printf("Zadejte stav na zacatku roku:\n");
+            break;
+        
+        case 2:
+            printf("Zadejte mesicni vklad:\n");
+            break;
+
+        default:
+            printf("Chyba ve funkci input()\n");
+            exit(EXIT_FAILURE);
+        }
+        
         printf("(Minimum %d maximum %d)\n", MINVKLAD, MAXVKLAD);
         scanf("%d", &input);
         while (getchar() != '\n') {
@@ -72,16 +89,17 @@ void writeToFile(FILE *file, float input, float inputMonth) {
                 input += inputMonth;
             }
         }
-        fprintf(file, "--------------------------------------\n");
+        fprintf(file, "----------------------------------\n\n");
     }
 }
 
 // Funkce pro zápis hlavičky do souboru
-void hlavicka(FILE *file, float startInput) {
-    float bigInput = input();
+int hlavicka(FILE *file) {
+    float bigInput = input(1);
     fprintf(file, "Sporici ucet, rocni urokova mira %.2f %%\n"
-            "Stav uctu na zacatku roku %d je %.2f\n"
-            "--------------------------------------", UROKOVAMIRA, ROK, bigInput);
+                  "Stav uctu na zacatku roku %d je %.2f\n"
+                  "-------------------------------------------\n\n", UROKOVAMIRA, ROK, bigInput);
+    return bigInput;
 }
 
 // Funkce pro výpočet úroku
@@ -96,9 +114,9 @@ int main (){
         printf("soubor %s se nepodarilo otevrit", SOUBOR);
         return 1;
     }
-    float inputStart = input();
-    hlavicka(file, inputStart);
-    writeToFile(file, inputStart, input());
+    float inputStart = input(2);
+    int zacatekRoku = hlavicka(file);
+    writeToFile(file, zacatekRoku, inputStart);
 
     fclose(file);
     if (file == NULL) {
