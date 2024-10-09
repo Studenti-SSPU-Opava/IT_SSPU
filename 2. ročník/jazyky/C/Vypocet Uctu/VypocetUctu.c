@@ -8,12 +8,12 @@ za cely rok a vkladem kazdy mesic
 */
 
 #include <stdio.h>
-#define UROKOVAMIRA 5.61
-#define MINVKLAD 100
-#define MAXVKLAD 100000
-#define DAN 15
-#define ROK 2024
-#define SOUBOR "vypisUctu.txt"
+#define UROKOVAMIRA 5.61 // Úroková míra
+#define MINVKLAD 100 // Minimální vklad
+#define MAXVKLAD 100000 // Maximální vklad
+#define VYPLATA 15 // 15. den v měsíci
+#define ROK 2024 // Rok
+#define SOUBOR "vypisUctu.txt" // Soubor
 
 // Funkce pro kontrolu přestupného roku
 int leapYear(){
@@ -65,10 +65,10 @@ void writeToFile(FILE *file, float input, float inputMonth) {
         fprintf(file, "--------------------------------------\n");
         fprintf(file, "   Datum  | Stav uctu | Urok | Vklad\n");
         fprintf(file, "--------------------------------------\n");
-        for (int j = 1; j <= daysInMonth(i); j++) {
+        for (int j = 1; j <= daysInMonth(i); j++) { // Výpis dnů v měsíci
             fprintf(file, "%2d.%2d.%2d | %.2f | %.2f | %.2f\n", j, i, ROK, input, input * UROKOVAMIRA / 100 / 365, inputMonth);
             input += input * UROKOVAMIRA / 100 / 365;
-            if (j == DAN) {
+            if (j == VYPLATA) {
                 input += inputMonth;
             }
         }
