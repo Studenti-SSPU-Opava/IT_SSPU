@@ -4,7 +4,7 @@
 
 int is_prime_number(int number) {
     const int sqrt_number = sqrt(number);
-    for (int i = 0; i <= number; i++)
+    for (int i = 2; i <= sqrt_number; i++)
     {
         if (number % i == 0){
             return 0;
@@ -16,29 +16,37 @@ int is_prime_number(int number) {
 void print_int_array(int* array, int size){
     for (int i = 0; i < size; i++)
     {
-        printf("%d\n", array[i]);
+        printf("%d, ", *(array+i));
     }
+    printf("\n");
+}
+
+int* prime_numbers_finder(int max_number, int *output_length){
+    int *array = NULL, array_size = 0;
+  
+    for (int i = 2; i < max_number; i++)
+    {
+        if (is_prime_number(i)){
+            array = realloc(array, sizeof(int) * (array_size + 1));
+            if (array == NULL){
+                printf("Memory allocation failed\n");
+                return NULL;
+            }
+            array[array_size++] = i;
+        }
+    }
+
+    *output_length = array_size;
+    return array;
 }
 
 int main(){
-    int* prime_numbers = NULL;
-    int prime_numbers_size = 0;
-    int index = 2;
+    int prime_numbers_length;
+    int* prime_numbers = prime_numbers_finder(1000, &prime_numbers_length);
 
-    while (1)
-    {
-        if (is_prime_number(++index)){
-            prime_numbers = realloc(prime_numbers, 
-                sizeof(int) * prime_numbers_size);
-            if (prime_numbers == NULL){
-                printf("Memory allocation failed\n");
-                return 1;
-            }
-            prime_numbers[prime_numbers_size++] = index;
-            
-            printf("Prime number: %d\n", index);
-            print_int_array(prime_numbers, prime_numbers_size);
-        }
-    }
-    index++;
+    print_int_array(prime_numbers, prime_numbers_length);
+
+    free(prime_numbers);
+
+
 }
