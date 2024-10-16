@@ -24,7 +24,7 @@ jobs:
         find . -name "*.c" | while read -r file; do
           dir=$(dirname -- "$file")
           filename=$(basename -- "$file" .c)
-          gcc "$file" -o "$dir/$filename"
+          gcc "$file" -o "$dir/$filename" -lm
           if [ -f "$dir/$filename" ]; then
             echo "Compilation successful for $file -> $dir/$filename"
           else
