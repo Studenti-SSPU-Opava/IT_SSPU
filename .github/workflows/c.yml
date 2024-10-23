@@ -16,15 +16,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Install GCC
-      run: sudo apt-get install gcc
+    - name: Install GCC and Development Libraries
+  run: |
+    sudo apt-get update
+    sudo apt-get install build-essential libmath-dev
 
     - name: Compile All C Files in Subdirectories
       run: |
         find . -name "*.c" | while read -r file; do
           dir=$(dirname -- "$file")
           filename=$(basename -- "$file" .c)
-          gcc "$file" -o "$dir/$filename"
+          gcc "$file" -o "$dir/$filename" -lm
           if [ -f "$dir/$filename" ]; then
             echo "Compilation successful for $file -> $dir/$filename"
           else
