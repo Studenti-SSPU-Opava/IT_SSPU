@@ -1,11 +1,12 @@
 /*
-
-Uvod do ukazatelu a alokace pameti, 
-par experimentu s ukazateli a 
-minihra s polem.
-
-25.9.2024
-
+*
+* Uvod do ukazatelu a alokace pameti, 
+* par experimentu s ukazateli a 
+* minihra s polem.
+* ===================================
+*
+* 25.9.2024
+*
 */
 #include <stdio.h>
 #include <stdlib.h>

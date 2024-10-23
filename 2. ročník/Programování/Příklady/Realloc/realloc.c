@@ -1,9 +1,9 @@
 /*
- * realloc ver. 1.0
+ * realloc.c ver. 1.0
  *
- * Program na nalezení prvočísel menších než 1000
- * a jejich výpis
- * =================================
+ * Program na nalezení prvočísel 
+ * menších než 1000 a jejich výpis
+ * ===============================
  *
  * v1.0 - Elias Constantine - 16.10.2024
  * 
