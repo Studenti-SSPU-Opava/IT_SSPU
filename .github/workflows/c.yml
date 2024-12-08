@@ -1,0 +1,52 @@
+name: C check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install GCC and Development Libraries
+  run: |
+    sudo apt-get update
+    sudo apt-get install build-essential libmath-dev
+
+    - name: Compile All C Files in Subdirectories
+      run: |
+        find . -name "*.c" | while read -r file; do
+          dir=$(dirname -- "$file")
+          filename=$(basename -- "$file" .c)
+          gcc "$file" -o "$dir/$filename" -lm
+          if [ -f "$dir/$filename" ]; then
+            echo "Compilation successful for $file -> $dir/$filename"
+          else
+            echo "Compilation failed for $file"
+            exit 1
+          fi
+        done
+
+    - name: Verify All Binaries Exist
+      run: |
+        find . -name "*.c" | while read -r file; do
+          dir=$(dirname -- "$file")
+          filename=$(basename -- "$file" .c)
+          if [ -f "$dir/$filename" ]; then
+            echo "Binary $dir/$filename exists."
+          else
+            echo "Binary $dir/$filename does not exist."
+            exit 1
+          fi
+        done
+
+    - name: Output Success Message
+      run: echo "All binaries were compiled successfully."

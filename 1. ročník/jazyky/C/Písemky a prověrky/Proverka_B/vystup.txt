@@ -1,0 +1,10 @@
+Vypis cisel s prvociselnym zakladem ze souboru cisla.txt
+--------------------------------------------------------
+    1.      2       7      128
+    2.      3       6      729
+    3.      2      10     1024
+    4.      5       2       25
+    5.      3       4       81
+    6.      7       2       49
+    7.      7       3      343
+The file vystup.txt contains 7 pairs of numbers.

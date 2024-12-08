@@ -1,0 +1,20 @@
+name: HTML check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2 # Required for all actions
+    - name: Checks HTML5
+      uses: Cyb3r-Jak3/html5validator-action@v7.2.0
+      with:
+        root: .
+        files: '**/*.html' # This will include all HTML files in all directories

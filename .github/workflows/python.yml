@@ -1,0 +1,48 @@
+name: Python check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Python
+      run: sudo apt-get install python3
+
+    - name: Check All Python Files in Subdirectories
+      run: |
+        find . -name "*.py" | while read -r file; do
+          python3 -m py_compile "$file"
+          if [ $? -eq 0 ]; then
+            echo "Syntax check successful for $file"
+          else
+            echo "Syntax check failed for $file"
+            exit 1
+          fi
+        done
+
+    - name: Verify All Compiled Files Exist
+      run: |
+        find . -name "*.py" | while read -r file; do
+          filename=$(basename -- "$file" .py)
+          compiled_files=$(find . -name "${filename}*.pyc")
+          if [ -n "$compiled_files" ]; then
+            echo "Compiled files for $file exist: $compiled_files"
+          else
+            echo "No compiled files for $file found."
+            exit 1
+          fi
+        done
+
+    - name: Output Success Message
+      run: echo "All Python files were checked successfully."
