@@ -28,6 +28,8 @@ int input(const char* text){
         printf("%s", text);
         scanf("%d", &input);
 
+        cc = 0;
+        
         while (getchar() != '\n') {
             cc++;
         }
@@ -72,15 +74,10 @@ void generateRC() {
 
 int main() {
     srand(time(NULL));
-    char cont;
+    int constantine;
     do{
         generateRC();
-        printf("Chcete pokracovat? (y/n)\n");
-        scanf("%c", &cont);
-        if (cont == 'n')
-        {
-            return 0;
-        } 
-    } while (cont == 'y');
+        constantine = input("Chcete pokracovat? (1-ano)\n");
+    } while (constantine == 1);
     return 0;
 }
