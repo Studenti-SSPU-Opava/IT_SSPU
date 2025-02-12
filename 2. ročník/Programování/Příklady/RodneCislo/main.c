@@ -3,11 +3,13 @@
 #include <time.h>
 #include <string.h>
 
+// Funkce pro zjisteni, zda je rok prestupny
 int isLeapYear(int year) {
     return (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0));
 }
 
-int isValidDate(int day, int month, int year) {
+// Funkce pro kontrolu platnosti dat
+int checkDate(int day, int month, int year) {
     if (year < 1954 || year > 2053) return 0;
     if (month < 1 || month > 12) return 0;
     if (day < 1 || day > 31) return 0;
@@ -20,7 +22,8 @@ int isValidDate(int day, int month, int year) {
     return 1;
 }
 
-int input(const char* text){
+// Funkce pro vstup uzivatele
+int input(const char* text) {
     int input;
     int cc;
 
@@ -30,7 +33,7 @@ int input(const char* text){
 
         cc = 0;
         
-        while (getchar() != '\n') {
+        while (getchar() != '\n') {// Kontrola bufferu
             cc++;
         }
 
@@ -41,10 +44,12 @@ int input(const char* text){
     return input;
 }
 
-void generateRC() {
+
+// Funkce pro seskladani a generovani rodneho cisla
+void genRc() {
     int year, month, day, gender, endNum, controlNum;
     char rc[11];
-    char checkRc[10];
+    char checkRc[11];
 
     do{
         year = input("Zadej rok (1954-2053):\n");
@@ -52,10 +57,10 @@ void generateRC() {
         day = input("Zadej den v (1-31):\n");
         gender = input("Zadej pohlaví (0 - zena, 1 - muz):\n");
 
-        if (!isValidDate(day, month, year)) {
+        if (!checkDate(day, month, year)) {
             printf("Neplatné datum.\n");
         } 
-    } while (!isValidDate(day, month, year));
+    } while (!checkDate(day, month, year));
 
     if (gender == 0) {
         month += 50;
@@ -63,21 +68,23 @@ void generateRC() {
 
     do {
         endNum = rand() % 1000;
-        sprintf(checkRc, "%02d%02d%02d%03d", year % 100, month, day, endNum);
-        checkRc[9] = '\0';
+        sprintf(checkRc, "%02d%02d%02d/%03d", year % 100, month, day, endNum);
+        checkRc[10] = '\0';
     } while ((controlNum = atoi(checkRc)) % 11 == 10);
 
-    sprintf(rc, "%s%d", checkRc, controlNum % 11);
+    sprintf(rc, "%s%d", checkRc, controlNum % 11);// Seskladani rodneho cisla
 
     printf("Rodne cislo: %s\n", rc);
 }
 
 int main() {
-    srand(time(NULL));
+    srand(time(NULL)); // Inicializace generatoru nahodnych cisel
     int constantine;
-    do{
-        generateRC();
+
+    do {
+        genRc();
         constantine = input("Chcete pokracovat? (1-ano)\n");
     } while (constantine == 1);
+
     return 0;
 }
