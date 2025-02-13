@@ -79,13 +79,6 @@ void genRc() {
         }
     } while (!checkDay(day, month, year));
 
-    do {
-        endNum = input("Zadej posledni tri cislice rodneho cisla (000-999):\n");
-        if (endNum < 0 || endNum > 999) {
-            printf("Neplatne cislo.\n");
-        }
-    } while (endNum < 0 || endNum > 999);
-
     gender = input("Zadej pohlaví (0 - zena, 1 - muz):\n");
 
     if (gender == 0) {
@@ -93,11 +86,18 @@ void genRc() {
     } 
 
     do {
+        endNum = input("Zadej posledni tri cislice rodneho cisla (000-999):\n");
         sprintf(checkRc, "%02d%02d%02d%03d", year % 100, month, day, endNum);
-        checkRc[9] = '\0';
-    } while ((controlNum = atoi(checkRc)) % 11 == 10);
+        if (endNum < 0 || endNum > 999) {
+            printf("Neplatne cislo.\n");
+        } else if (atoi(checkRc) % 11 == 10) {
+            printf("Neplatne cislo.\n");
+        }
+    } while (endNum < 0 || endNum > 999 || atoi(checkRc) % 11 == 10);
 
-    printf("Rodne cislo: %02d%02d%02d/%03d%01d\n", year % 100, month, day, endNum, controlNum % 11);
+    checkRc[9] = '\0';
+    controlNum = atoi(checkRc) % 11;
+    printf("Rodne cislo: %02d%02d%02d/%03d%01d\n", year % 100, month, day, endNum, controlNum);
 }
 
 int main() {
@@ -108,6 +108,5 @@ int main() {
         genRc();
         constantine = input("Chcete pokracovat? (1-ano)\n");
     } while (constantine == 1);
-
     return 0;
 }
