@@ -9,9 +9,7 @@ int isLeapYear(int year) {
 }
 
 // Funkce pro kontrolu platnosti dat
-int checkDate(int day, int month, int year) {
-    if (year < 1954 || year > 2053) return 0;
-    if (month < 1 || month > 12) return 0;
+int checkDay(int day, int month, int year) {
     if (day < 1 || day > 31) return 0;
 
     if (month == 2) {
@@ -25,42 +23,49 @@ int checkDate(int day, int month, int year) {
 // Funkce pro vstup uzivatele
 int input(const char* text) {
     int input;
-    int cc;
+    int charCount;
 
     do {
         printf("%s", text);
         scanf("%d", &input);
 
-        cc = 0;
+        charCount = 0;
         
         while (getchar() != '\n') {// Kontrola bufferu
-            cc++;
+            charCount++;
         }
 
-        if (cc != 0) {
+        if (charCount != 0) {
             printf("Neplatny vstup.\n");
         }
-    } while (cc != 0);
+    } while (charCount != 0);
     return input;
 }
-
 
 // Funkce pro seskladani a generovani rodneho cisla
 void genRc() {
     int year, month, day, gender, endNum, controlNum;
-    char rc[11];
-    char checkRc[11];
+    char checkRc[10];
 
-    do{
+    do {
         year = input("Zadej rok (1954-2053):\n");
+        if (year < 1954 || year > 2053) {
+            printf("Neplatny rok.\n");
+        }
+    } while (year < 1954 || year > 2053);
+    do {
         month = input("Zadej mesic (1-12):\n");
+        if (month < 1 || month > 12) {
+            printf("Neplatny mesic.\n");
+        }
+    } while (month < 1 || month > 12);
+    do {
         day = input("Zadej den v (1-31):\n");
-        gender = input("Zadej pohlaví (0 - zena, 1 - muz):\n");
-
-        if (!checkDate(day, month, year)) {
-            printf("Neplatné datum.\n");
-        } 
-    } while (!checkDate(day, month, year));
+        if (!checkDay(day, month, year)) {
+            printf("Neplatny den.\n");
+        }
+    } while (!checkDay(day, month, year));
+     gender = input("Zadej pohlaví (0 - zena, 1 - muz):\n");
 
     if (gender == 0) {
         month += 50;
@@ -68,13 +73,11 @@ void genRc() {
 
     do {
         endNum = rand() % 1000;
-        sprintf(checkRc, "%02d%02d%02d/%03d", year % 100, month, day, endNum);
-        checkRc[10] = '\0';
+        sprintf(checkRc, "%02d%02d%02d%03d", year % 100, month, day, endNum);
+        checkRc[9] = '\0';
     } while ((controlNum = atoi(checkRc)) % 11 == 10);
 
-    sprintf(rc, "%s%d", checkRc, controlNum % 11);// Seskladani rodneho cisla
-
-    printf("Rodne cislo: %s\n", rc);
+    printf("Rodne cislo: %02d%02d%02d/%03d%01d\n", year % 100, month, day, endNum, controlNum % 11);
 }
 
 int main() {
