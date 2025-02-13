@@ -79,6 +79,13 @@ void genRc() {
         }
     } while (!checkDay(day, month, year));
 
+    do {
+        endNum = input("Zadej posledni tri cislice rodneho cisla (000-999):\n");
+        if (endNum < 0 || endNum > 999) {
+            printf("Neplatne cislo.\n");
+        }
+    } while (endNum < 0 || endNum > 999);
+
     gender = input("Zadej pohlaví (0 - zena, 1 - muz):\n");
 
     if (gender == 0) {
@@ -86,7 +93,6 @@ void genRc() {
     } 
 
     do {
-        endNum = rand() % 1000;
         sprintf(checkRc, "%02d%02d%02d%03d", year % 100, month, day, endNum);
         checkRc[9] = '\0';
     } while ((controlNum = atoi(checkRc)) % 11 == 10);
