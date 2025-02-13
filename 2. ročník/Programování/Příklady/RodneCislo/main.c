@@ -10,14 +10,22 @@ int isLeapYear(int year) {
 
 // Funkce pro kontrolu platnosti dat
 int checkDay(int day, int month, int year) {
-    if (day < 1 || day > 31) return 0;
+    if (day < 1 || day > 31) {
+        return 0;
+    } 
 
     if (month == 2) {
-        if (isLeapYear(year)) return day <= 29;
-        else return day <= 28;
+        if (isLeapYear(year)) {
+            return 29;
+        } else {
+            return 28;
+        }
     }
-    if (month == 4 || month == 6 || month == 9 || month == 11) return day <= 30;
-    return 1;
+    if (month == 4 || month == 6 || month == 9 || month == 11) {
+        return 30;
+    } else {
+        return 31;
+    }
 }
 
 // Funkce pro vstup uzivatele
@@ -59,13 +67,19 @@ void genRc() {
             printf("Neplatny mesic.\n");
         }
     } while (month < 1 || month > 12);
+
+    int maxDay = checkDay(1, month, year);
+    char dayPrompt[20];
+    sprintf(dayPrompt, "Zadej den (1-%d):\n", maxDay);
+
     do {
-        day = input("Zadej den v (1-31):\n");
+        day = input(dayPrompt);
         if (!checkDay(day, month, year)) {
             printf("Neplatny den.\n");
         }
     } while (!checkDay(day, month, year));
-     gender = input("Zadej pohlaví (0 - zena, 1 - muz):\n");
+
+    gender = input("Zadej pohlaví (0 - zena, 1 - muz):\n");
 
     if (gender == 0) {
         month += 50;
