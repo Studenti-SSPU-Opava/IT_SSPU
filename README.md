@@ -4,10 +4,10 @@ V tomto repozitáři najdete vše, co jsme dělali ve škole, narazíte tu i na 
 Snažíme se tento repositář udělat vhodným místem pro studium a pro odkládání souborů, které by mohly sloužit i ostatním.
 
 ### 💡 Jak provádět commity
-WIP - bude přidáno později, na wiki se pracuje
+mělo být přidáno později, jaksi nïkdo nemá čas i chuť, takže smolík
 
 ### 📋 Návod k commitování
-WIP
+Pravděpodobně taky nebude
 
 
 ### Zobrazovač html souborů:
