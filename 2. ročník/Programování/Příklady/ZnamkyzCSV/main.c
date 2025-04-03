@@ -49,16 +49,47 @@ int loadFile(STUDENTS* students) {
     return lineIndex - 1;
 }
 
+float averageGrade(int grades[5]) {
+    float sum = 0;
+    for (int i = 0; i < 5; i++) {
+        sum += grades[i];
+    }
+    return sum / 5;
+}
+
+int minGrade(int grades[5]) {
+    int min = grades[0];
+    for (int i = 1; i < 5; i++) {
+        if (grades[i] < min) {
+            min = grades[i];
+        }
+    }
+    return min;
+}
+
+int maxGrade(int grades[5]) {
+    int max = grades[0];
+    for (int i = 1; i < 5; i++) {
+        if (grades[i] > max) {
+            max = grades[i];
+        }
+    }
+    return max;
+}
+
 void printStudents(STUDENTS* students, int studentCount) {
+    printf("  PRIJMENI       JMENO   AJ CJ  PCS PGR PVY  AVG   BEST  WORST\n");
     for (int i = 0; i < studentCount; i++) {
         printf("%10s %10s: ", students[i].firstName, students[i].lastName);
         for (int j = 0; j < 5; j++) {
             printf("%3d ", students[i].grades[j]);
         }
+        printf("%5.1f", averageGrade(students[i].grades));
+        printf("%5d", minGrade(students[i].grades));
+        printf("%5d", maxGrade(students[i].grades));
         printf("\n");
     }
 }
-
 
 
 int main(void) {
