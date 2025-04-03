@@ -7,12 +7,13 @@
 #define LINE_SIZE 100
 
 typedef struct {
-    char lastName[30];
-    char firstName[30];
-    int grades[5];
+    char *lastName;
+    char *firstName;
+    int *grades;
 } STUDENTS;
 
-STU loadFile(STUDENTS* students) {
+STUDENTS *loadFile() {
+    STUDENTS *students = NULL;
     char line[LINE_SIZE];
     int lineIndex = 0;
 
@@ -23,31 +24,41 @@ STU loadFile(STUDENTS* students) {
     }
 
     while (fgets(line, sizeof(line), file) != NULL) {
+
         if (lineIndex != 0) {
-            int colIndex = 0;
-            char *pch = strtok(line, ", ");
-            while (pch != NULL) {
-                if (colIndex == 0) {
-                    strcpy(students[lineIndex - 1].firstName, pch);
-                } 
-                else if (colIndex == 1) {
-                    strcpy(students[lineIndex - 1].lastName, pch);
-                } 
-                else {
-                    students[lineIndex - 1].grades[colIndex - 2] = atoi(pch);
-                }
-                pch = strtok(NULL, ", ");
-                colIndex++;
+            students = (STUDENTS *) realloc(students, sizeof(STUDENTS) * lineIndex);
+            if (students == NULL) {
+                return NULL;
             }
+            students[lineIndex - 1].grades = NULL;
         }
-    
-        lineIndex++;
+
+        int colIndex = 0;
+        char *pch = strtok(line, ", ");
+        while (pch != NULL) {
+
+            if (colIndex == 0) {
+                students[lineIndex - 1].lastName = malloc(sizeof(char) * strlen(pch) + 1);
+                strcpy(students[lineIndex - 1].lastName, pch);
+            } 
+            else if (colIndex == 1) {
+                students[lineIndex - 1].firstName = malloc(sizeof(char) * strlen(pch) + 1);
+                strcpy(students[lineIndex - 1].firstName, pch);
+            } 
+            else {
+                students[lineIndex - 1].grades = realloc(students[lineIndex - 1].grades, sizeof(int) * (colIndex - 1));
+                students[lineIndex - 1].grades[colIndex - 2] = atoi(pch);
+            }
+            pch = strtok(NULL, ", ");
+            colIndex++;
+        }
     }
-
-
+    lineIndex++;
     fclose(file);
-    return lineIndex - 1;
+    return lineIndex - 1; 
 }
+
+STUDENTS *load2(int *)
 
 float averageGrade(int grades[5]) {
     float sum = 0;
@@ -93,10 +104,13 @@ void printStudents(STUDENTS* students, int studentCount) {
 
 
 int main(void) {
-    STUDENTS students[STUDENT_COUNT];
     int studentCount = 0;
-    studentCount = loadFile(students);
-    printStudents(students, studentCount);
+    STUDENTS *students = loadFile(&studentCount);
+    if (students != NULL && studentCount > 0) {
+        printStudents(students, studentCount);
+    }
+
+
 
     return 0;
 }
