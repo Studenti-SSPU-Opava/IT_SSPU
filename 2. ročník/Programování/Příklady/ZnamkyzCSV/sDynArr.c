@@ -32,6 +32,7 @@ STUDENTS *loadFile() {
             }
             students[lineIndex - 1].grades = NULL;
         }
+        
 
         int colIndex = 0;
         char *pch = strtok(line, ", ");

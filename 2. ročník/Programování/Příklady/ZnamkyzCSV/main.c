@@ -12,7 +12,7 @@ typedef struct {
     int grades[5];
 } STUDENTS;
 
-STU loadFile(STUDENTS* students) {
+int loadFile(STUDENTS* students) {
     char line[LINE_SIZE];
     int lineIndex = 0;
 
