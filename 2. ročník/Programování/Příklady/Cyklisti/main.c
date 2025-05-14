@@ -5,6 +5,7 @@
 
 #define VSTUP "cyklistika.txt"
 #define VELIKOST 100
+#define VYSTUP "vystup.txt"
 typedef struct {
     int hod;
     int min;
@@ -166,11 +167,29 @@ void vypis(DATA *data, int pocet) {
     printf("Pocet cyklistu ze SVK: %d\n", sk);
 }
 
+void vypisSoubor(DATA *data, int pocet) {
+    FILE *file;
+    file = fopen( VYSTUP, "w");
+    if (file == NULL) {
+        printf("Chyba pri otvarani suboru vystup.txt\n");
+        return;
+    }
+
+    fprintf(file, "StartovniCislo Prijmeni         Jmeno           Narodnost Rocnik Klub                                              Cas\n");
+
+    for (int i = 0; i < pocet; i++) {
+        fprintf(file, "%d %15s %15s %3s %d %50s %02d:%02d:%04.1f\n", data[i].StartovniCislo, data[i].Prijmeni, data[i].Jmeno, data[i].narodnost, 
+                                                                data[i].rocnik, data[i].klub, data[i].cas.hod, data[i].cas.min, data[i].cas.sec);
+    }
+    fclose(file);
+}
+
 int main(void) {
     DATA *data;
     int pocet = 0;
     data = cteni(&pocet);
-    bubbleSort(data, pocet);
     vypis(data, pocet);
+    bubbleSort(data, pocet);
+    vypisSoubor(data, pocet);
     return 0;
 } 
