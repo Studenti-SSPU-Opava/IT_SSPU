@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h> 
 
 #define VSTUP "cyklistika.txt"
 #define VELIKOST 100
@@ -90,24 +91,86 @@ DATA *cteni(int *pocet) {
     return pamet;
 }
 
-void vypis(DATA *data, int pocet) {
-    for (int i = 0; i < pocet; i++) {
-        printf("%4d %10s %10s %3s %4d %30s %02d:%02d:%04.1f\n", data[i].StartovniCislo, data[i].Prijmeni, data[i].Jmeno, data[i].narodnost, 
-                                                 data[i].rocnik, data[i].klub, data[i].cas.hod, data[i].cas.min, data[i].cas.sec);
+int nejstarsiCyklista(DATA *data, int pocet) {
+    int index = 0;
+    for (int i = 1; i < pocet; i++) {
+        if (data[i].rocnik < data[index].rocnik) {
+            index = i;
+        }
     }
+    return index;
+}
+
+int nejmladsiCyklista(DATA *data, int pocet) {
+    int index = 0;
+    for (int i = 1; i < pocet; i++) {
+        if (data[i].rocnik > data[index].rocnik) {
+            index = i;
+        }
+    }
+    return index;
+}
+
+int vek(int rocnik) {
+    time_t t = time(NULL);
+    struct tm *tim = localtime(&t);
+    return (tim->tm_year + 1900) - rocnik;
+}    
+
+int prevodCasu(CAS *cas){
+    return (cas->hod * 36000) + (cas->min * 600) + (int)cas->sec * 10;
+}
+
+void swap(DATA *a, DATA *b) {
+    DATA temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void bubbleSort(DATA *data, int pocet) {
+    int i, j;
+    int swapped;
+    for (i = 0; i < pocet - 1; i++) {
+        swapped = 0;
+        for (j = 0; j < pocet - i - 1; j++) {
+            if (prevodCasu(&data[j].cas) > prevodCasu(&data[j + 1].cas)) {
+                swap(&data[j], &data[j + 1]);
+                swapped = 1;
+            }
+        }
+        if (swapped == 0) {
+            break;
+        }
+    }
+  
+}
+
+void vypis(DATA *data, int pocet) {
+    int index = nejstarsiCyklista(data, pocet);
+    int cz = 0;
+    int sk = 0;
+    for (int i = 0; i < pocet; i++) {
+        printf("%d %15s %15s %3s %d %50s %02d:%02d:%04.1f\n", data[i].StartovniCislo, data[i].Prijmeni, data[i].Jmeno, data[i].narodnost, 
+                                                                data[i].rocnik, data[i].klub, data[i].cas.hod, data[i].cas.min, data[i].cas.sec);
+        if (strcmp(data[i].narodnost, "CZE") == 0) {
+            cz++;
+        } else if (strcmp(data[i].narodnost, "SVK") == 0) {
+            sk++;
+        }
+    }
+    printf("Pocet cyklistu: %d\n", pocet);
+    printf("Nejstarsi cyklista je %s %s narozen v roce %d. Je mu %d let.\n", data[0].Prijmeni, data[0].Jmeno, data[0].rocnik, 2023 - data[0].rocnik);
+    printf("Nejmladsi cyklista je %s %s narozen v roce %d. Je mu %d let.\n", data[pocet - 1].Prijmeni, data[pocet - 1].Jmeno, 
+                                                                             data[pocet - 1].rocnik, 2023 - data[pocet - 1].rocnik);
+    printf("Pocet cyklistu z CR: %d\n", cz);
+    printf("Pocet cyklistu ze SVK: %d\n", sk);
 }
 
 int main(void) {
     DATA *data;
     int pocet = 0;
     data = cteni(&pocet);
+    bubbleSort(data, pocet);
     vypis(data, pocet);
-
-    if (data == NULL) {
-        printf("Chyba pri alokaci pameti.\n");
-        return 0;
-    }
-    
-    free(data);
     return 0;
 } 
