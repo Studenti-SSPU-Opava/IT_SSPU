@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Install ShellCheck
-      run: sudo apt-get install -y shellcheck
+      - name: Install ShellCheck
+        run: sudo apt-get install -y shellcheck
 
-    - name: Check All Bash Files in Subdirectories
-      run: |
-        find . -type f -name "*.sh" -print0 | xargs -0 shellcheck
+      - name: Check All Bash Files in Subdirectories
+        run: |
+          find . -type f -name "*.sh" -print0 | xargs -0 shellcheck
 
-    - name: Output Success Message
-      run: echo "All files were checked successfully."
+      - name: Output Success Message
+        run: echo "All files were checked successfully."
