@@ -1,0 +1,13 @@
+startovni cislo jmeno 1.kolo 2.kolo
+1 Vonn Lindsey 0:55.65 0:59.45
+2 Goggia Sofia 0:55.71 1:01.11
+3 Schnarf Johanna 0:56.08 1:02.51
+4 Regensburg Viktoria 0:55.98 1:10.02
+5 Ledecka Ester 0:56.42 0:59.36
+6 Weirather Tina 0:56.14 1:04.06
+7 McKennis Alice 0:55.93 1:00.01
+8 Curtoni Irene 0:57.65 0:56.64
+9 Schmidthofer Nicole 0:56.34 1:00.58
+10 Flury Jasmine 0:56.98 1:00.45
+11 Shiffrin Mikaela 0:55.98 0:54.88
+12 Hansdotter Frida 0:56.35 0:55.94

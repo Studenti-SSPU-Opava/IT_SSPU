@@ -1,0 +1,23 @@
+st.c.;prijmeni;jmeno;narozeni;stat;oddil;cas
+1;ZUREK;Jiri;28.02.1983;CZE; JOF-X Team OSTRAVA-Poruba;3:33:09
+3;MIKUNDA;Milos;07.10.1964;CZE; Roznov pod Radhostem;4:24:03
+4;SMEKAL;Libor;24.08.1975;CZE; Prostejov;4:30:10
+16;KABAJA;Jiri;31.07.1974;CZE; Opava;3:36:50
+20;LUKSZA;Radek;22.08.1974;CZE; Maraton klub Seitl Ostrava;4:17:36
+21;NOWAK;Jacek;20.07.1955;POL; Katowice;4:59:05
+32;TOMAI;Martin;06.08.1976;CZE; Ostrava;4:22:51
+43;JURICA;Pavel;26.05.1979;CZE; Maraton klub Seitl Ostrava;3:37:17
+60;ROCZKOWSKI;Artur;08.08.1965;POL; SBD Energetyk Rybnik;3:11:50
+70;JANDASEK;Michal;09.04.1979;CZE; Sokol Zeravice;4:13:30
+92;VYTISK;Alfons;01.11.1949;CZE; Maraton kllub Seitl Ostrava;4:12:40
+100;LYSCARZ;Jozef Jerzy;29.03.1980;POL; Wskrzeszenie.PL;4:43:11
+104;NEJEDLY;Petr;04.03.1974;CZE; Praha 5;4:43:35
+128;JANCAR;Stanislav;21.01.1967;CZE; Maraton klub Seitl Ostrava;4:29:55
+139;SVOZIL;Libor;05.10.1971;CZE; Maraton klub Seitl Ostrava;5:12:53
+151;SZABLICKI;Aleksy;29.09.1960;POL; WKB META Lubliniec;5:03:20
+180;DVORACEK;Vlastimil;23.03.1959;CZE; Doudleby nad Orlici;5:16:52
+187;TOMANEK;Roman;11.10.1960;CZE; Gallak Slavicin;3:17:47
+325;BOROJA;Drago;04.11.1953;SRB; 40 Latek Tychy;5:06:28
+369;VOSTRY;Miroslav;19.06.1977;CZE; Maraton klub Kladno;6:03:11
+400;KRUMER;Miroslav;02.07.1949;CZE; MK Ostrov;4:23:21
+911;SIMON;Alexander;17.11.1947;SVK; DS Zilina;4:47:09
