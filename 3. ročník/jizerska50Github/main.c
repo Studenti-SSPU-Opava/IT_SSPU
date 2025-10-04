@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-#define MAX_LINE_LENGTH 60
+#define MAX_LINE_LENGTH 100
 #define DELIMS ";,():"
 #define INPUT "jizerska50.txt"
 #define OUTPUT "vysledkova_listina.txt"
