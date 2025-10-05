@@ -1,0 +1,55 @@
+st. cislo.;prijmeni, jmeno (rocnik);narodnost.;cas
+16;Eliassen, Petter (1985);NOR;2:02:29
+17;Gjerdalen, Tord Asle (1983);NOR;2:02:28
+18;Pedersen, Morten Eide (1987);NOR;2:03:34
+19;Hoelgaard, Stian (1991);NOR;2:03:34
+21;Fjeld, Oeyvind Moen (1988);NOR;2:05:38
+22;Persson, Emil (1995);SWE;2:02:27
+23;Kardin, Oskar (1992);SWE;2:02:38
+24;Thele, Joar Andreas (1993);NOR;2:07:54
+25;Johansson, Marcus (1990);SWE;2:07:53
+26;Thyli, Vetle (1989);NOR;2:03:34
+27;Novak, Max (1996);SWE;2:03:34
+29;Holmberg, Andreas (1992);RUS;2:07:57
+31;Vesterheim, Magnus (1994);NOR;2:08:44
+32;Aukland, Anders (1972);NOR;2:06:19
+33;Jeannerod, Alexis (1991);FRA;2:05:38
+34;Rezac, Stanislav (1973);CZE;2:08:01
+36;Nilsson, Klas (1986);SWE;2:04:21
+37;Pliska, Jiri (1981);CZE;2:06:20
+38;Niemi-Impola, Bob (1992);SWE;2:08:06
+39;Jespersen, Chris Andre (1983);NOR;2:13:46
+40;Srail, Jan (1990);CZE;2:07:53
+42;Poirrier, Bastien (1988);FRA;2:07:57
+44;Sedlacek, Vaclav (1986);CZE;2:08:02
+45;Persson, Nils (1993);SWE;2:09:41
+46;Skinstad, Petter Soleng (1989);NOR;2:13:43
+47;Stocek, Fabian (1994);CZE;2:08:02
+48;Vokuev, Ermil (1992);RUS;2:02:28
+49;Ekloef, Johannes (1995);SWE;2:04:22
+50;Brigadoi, Mauro (1992);ITA;2:08:44
+51;Dvoskin, Alexey (1983);RUS;2:07:57
+53;Vylegzhanin, Maxim (1982);RUS;2:02:29
+55;Goebel, Florian (1972);GER;2:17:54
+57;Grebenko, Alexander (1994);RUS;2:03:35
+58;Frost, Robin (1993);GER;2:18:21
+59;Deswaziere, Theo (1996);FRA;2:13:44
+60;Karlsson, Anton (1990);SWE;2:05:21
+61;Busin, Lorenzo (1996);ITA;2:12:48
+62;Oedegaarden, Thomas (1998);NOR;2:13:43
+65;Paus, Herman (2000);NOR;2:06:20
+66;Ferrari, Francesco (1994);ITA;2:08:45
+67;Du Pasquier, Arnaud (1992);FRA;2:13:43
+68;Sedlacek, Michal (1975);CZE;2:17:30
+70;Maenpaa, Hannes (1996);FIN;2:13:44
+75;Mich, Stefano (1993);ITA;2:17:50
+76;Leray, Matis (1999);FRA;2:08:12
+77;Winker, Christian (1996);GER;2:16:09
+80;Combey, Paul (1997);FRA;2:12:31
+83;Koskela, Niko (1990);FIN;2:06:19
+84;Mich, Riccardo (1991);ITA;2:17:29
+85;Bagrashov, Dmitriy (1995);RUS;2:06:26
+89;Rohde, Florian (1984);GER;2:13:44
+93;Matous, Adam (1998);CZE;2:13:44
+94;Tarantola, Antoine (1998);FRA;2:17:09
+105;Bestak, Jonas (1995);CZE;2:17:11
