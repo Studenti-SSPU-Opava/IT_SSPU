@@ -1,0 +1,21 @@
+[Unit]
+Description=Flask app with Gunicorn
+After=network.target
+
+[Service]
+Type=forking
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/flask-app
+Environment="PATH=/var/www/flask-app/.venv/bin"
+Environment="FLASK_ENV=production"
+Environment="FLASK_DEBUG=False"
+ExecStart=/var/www/flask-app/start_gunicorn.sh
+ExecStop=/var/www/flask-app/stop_gunicorn.sh
+ExecReload=/bin/kill -s HUP $MAINPID
+PIDFile=/var/www/flask-app/logs/gunicorn.pid
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

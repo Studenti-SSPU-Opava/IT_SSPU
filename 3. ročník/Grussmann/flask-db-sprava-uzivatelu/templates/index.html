@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Domovská stránka - Správa uživatelů{% endblock %}
+
+{% block content %}
+<h1>Vítejte v systému správy uživatelů</h1>
+
+<div style="text-align: center; margin: 30px 0;">
+    <p>Tento systém umožňuje správu uživatelů s využitím Flask frameworku, SQLAlchemy ORM a Alembic migrací.</p>
+    
+    <h2>Dostupné funkce:</h2>
+    <ul style="text-align: left; max-width: 400px; margin: 20px auto;">
+        <li>Zobrazení seznamu všech uživatelů</li>
+        <li>Přidání nového uživatele</li>
+        <li>Editace existujícího uživatele</li>
+        <li>Mazání uživatelů</li>
+        <li>REST API pro všechny operace</li>
+    </ul>
+    
+    <div style="margin-top: 30px;">
+        <a href="{{ url_for('list_users') }}" style="display: inline-block; margin: 10px; padding: 15px 30px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
+            Zobrazit uživatele
+        </a>
+        <a href="{{ url_for('create_user_form') }}" style="display: inline-block; margin: 10px; padding: 15px 30px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;">
+            Přidat uživatele
+        </a>
+    </div>
+</div>
+
+<div style="margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
+    <h3>API Endpointy:</h3>
+    <ul style="text-align: left;">
+        <li><strong>GET /api/users</strong> - Seznam všech uživatelů</li>
+        <li><strong>POST /api/users</strong> - Vytvoření nového uživatele</li>
+        <li><strong>GET /api/users/&lt;id&gt;</strong> - Detail uživatele</li>
+        <li><strong>PUT /api/users/&lt;id&gt;</strong> - Aktualizace uživatele</li>
+        <li><strong>DELETE /api/users/&lt;id&gt;</strong> - Smazání uživatele</li>
+    </ul>
+</div>
+{% endblock %}

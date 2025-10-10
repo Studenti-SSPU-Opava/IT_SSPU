@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Seznam uživatelů{% endblock %}
+
+{% block content %}
+<h1>Seznam uživatelů</h1>
+
+{% if users %}
+    <ul class="user-list">
+        {% for user in users %}
+        <li class="user-item">
+            <strong>{{ user.username }}</strong><br>
+            <em>{{ user.email }}</em><br>
+            {% if user.datum_narozeni %}
+            <span>Datum narození: {{ user.datum_narozeni.strftime('%d.%m.%Y') }}</span><br>
+            {% endif %}
+            <small>Vytvořen: {{ user.created_at.strftime('%d.%m.%Y %H:%M') }}</small>
+            
+            <div class="user-actions">
+                <a href="{{ url_for('edit_user_form', user_id=user.id) }}" class="edit-link">Editovat</a>
+                <form style="display: inline;" method="POST" action="{{ url_for('delete_user', user_id=user.id) }}" 
+                      onsubmit="return confirm('Opravdu chcete smazat uživatele {{ user.username }}?')">
+                    {{ delete_form.hidden_tag() }}
+                    {{ delete_form.submit(class="btn-danger", style="font-size: 14px; padding: 5px 10px;") }}
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p style="text-align: center; margin: 40px 0;">
+        Zatím nejsou žádní uživatelé.<br>
+        <a href="{{ url_for('create_user_form') }}">Přidat prvního uživatele</a>
+    </p>
+{% endif %}
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{{ url_for('create_user_form') }}">
+        <button>Přidat nového uživatele</button>
+    </a>
+</div>
+{% endblock %}
