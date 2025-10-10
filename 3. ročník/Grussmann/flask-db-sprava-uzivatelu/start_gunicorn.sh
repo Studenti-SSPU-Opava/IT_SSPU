@@ -18,7 +18,8 @@ if [ ! -d ".venv" ]; then
 fi
 
 # Activate virtual environment
-source .venv/bin/activate
+# shellcheck source=/dev/null
+source ".venv/bin/activate"
 
 # Check if gunicorn is installed
 if ! command -v gunicorn &> /dev/null; then

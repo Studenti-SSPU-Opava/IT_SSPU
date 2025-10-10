@@ -14,13 +14,13 @@ if [ -f "logs/gunicorn.pid" ]; then
     PID=$(cat logs/gunicorn.pid)
     echo -e "${BLUE}📋 Found PID: $PID${NC}"
     
-    if kill -0 $PID 2>/dev/null; then
+    if kill -0 "$PID" 2>/dev/null; then
         echo -e "${YELLOW}Stopping Gunicorn process...${NC}"
-        kill -TERM $PID
+        kill -TERM "$PID"
         
         # Wait for graceful shutdown
         for i in {1..10}; do
-            if ! kill -0 $PID 2>/dev/null; then
+            if ! kill -0 "$PID" 2>/dev/null; then
                 echo -e "${GREEN}✅ Gunicorn stopped successfully${NC}"
                 rm -f logs/gunicorn.pid
                 exit 0
@@ -31,7 +31,7 @@ if [ -f "logs/gunicorn.pid" ]; then
         
         # Force kill if still running
         echo -e "${RED}⚠️ Forcing shutdown...${NC}"
-        kill -KILL $PID 2>/dev/null
+        kill -KILL "$PID" 2>/dev/null
         rm -f logs/gunicorn.pid
         echo -e "${GREEN}✅ Gunicorn stopped (forced)${NC}"
     else

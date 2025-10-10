@@ -8,7 +8,7 @@ echo "🚀 Starting Flask application with Docker..."
 docker run -d \
   --name flask-app-container \
   -p 8000:8000 \
-  -v $(pwd)/app.db:/app/app.db \
+  -v "$(pwd)"/app.db:/app/app.db \
   flask-app
 
 echo "✅ Application is running on http://localhost:8000"

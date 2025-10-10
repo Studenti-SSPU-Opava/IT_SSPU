@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # Aktivace virtuálního prostředí
-source .venv/bin/activate
+# shellcheck source=/dev/null
+source ".venv/bin/activate"
 
 # Kontrola, zda byla předána akce
 if [ $# -eq 0 ]; then
