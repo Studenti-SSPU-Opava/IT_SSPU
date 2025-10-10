@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Editovat uživatele{% endblock %}
+
+{% block content %}
+<h1>Editovat uživatele</h1>
+
+<form method="POST" action="{{ url_for('edit_user_form', user_id=user.id) }}">
+    {{ form.hidden_tag() }}
+    
+    <div class="form-group">
+        {{ form.username.label(class="form-label") }}
+        {{ form.username(class="form-control" + (" is-invalid" if form.username.errors else "")) }}
+        {% if form.username.errors %}
+            <div class="invalid-feedback">
+                {% for error in form.username.errors %}
+                    <div>{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class="form-group">
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control" + (" is-invalid" if form.email.errors else "")) }}
+        {% if form.email.errors %}
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                    <div>{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+    
+    <div class="form-group">
+        {{ form.datum_narozeni.label(class="form-label") }}
+        {{ form.datum_narozeni(class="form-control" + (" is-invalid" if form.datum_narozeni.errors else "")) }}
+        {% if form.datum_narozeni.errors %}
+            <div class="invalid-feedback">
+                {% for error in form.datum_narozeni.errors %}
+                    <div>{{ error }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <small class="form-text text-muted">Volitelné pole - můžete nechat prázdné</small>
+    </div>
+    
+    <div class="form-group">
+        {{ form.submit(class="btn btn-primary") }}
+        <a href="{{ url_for('list_users') }}" class="btn btn-secondary">Zrušit</a>
+    </div>
+</form>
+
+<div style="margin-top: 30px; padding: 15px; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px;">
+    <h3>Informace o uživateli:</h3>
+    <p><strong>ID:</strong> {{ user.id }}</p>
+    <p><strong>Vytvořen:</strong> {{ user.created_at.strftime('%d.%m.%Y %H:%M:%S') }}</p>
+    {% if user.posts %}
+        <p><strong>Počet příspěvků:</strong> {{ user.posts|length }}</p>
+    {% endif %}
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background-color: #e9ecef; border-radius: 5px;">
+    <h3>Validace:</h3>
+    <ul>
+        <li>Uživatelské jméno: 3-80 znaků, musí být jedinečné</li>
+        <li>Email: platný formát, musí být jedinečný</li>
+        <li>Datum narození: volitelné, formát YYYY-MM-DD</li>
+        <li>Změny se uloží pouze po kliknutí na "Uložit změny"</li>
+    </ul>
+</div>
+{% endblock %}

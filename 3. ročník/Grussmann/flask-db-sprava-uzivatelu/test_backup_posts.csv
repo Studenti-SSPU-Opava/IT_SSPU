@@ -1,0 +1,4 @@
+id,title,content,created_at,author
+1,Vítejte v našem blogu!,Toto je první příspěvek na našem novém blogu. Těšíme se na vaše příspěvky!,2025-10-07T11:30:45.499758,admin
+2,Jak používat Flask,Flask je skvělý mikroframework pro Python. V tomto příspěvku si ukážeme základy...,2025-10-07T11:30:45.499759,jana_novakova
+3,Databázové migrace s Alembic,Alembic nám umožňuje elegantně spravovat změny v databázovém schématu...,2025-10-07T11:30:45.499760,petr_svoboda
