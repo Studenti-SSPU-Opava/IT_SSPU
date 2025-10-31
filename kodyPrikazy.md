@@ -15,7 +15,7 @@
 ##### Klonovat repozitář z GitHubu
 
 ```bash
-git clone https://github.com/"jmeno"/"nazev-repozitare".git // git@github.com:"jmeno"/"nazev-repozitare".git
+git clone https://github.com/"jmeno"/"nazev-repozitare"git // git@github.com:"jmeno"/"nazev-repozitare"git
 ```
 
 ##### Odeslat změny na GitHub

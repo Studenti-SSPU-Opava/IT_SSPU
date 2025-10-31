@@ -11,7 +11,7 @@ Pravděpodobně taky nebude
 
 
 ### Zobrazovač html souborů:
-[https://studenti-sspu-opava.github.io/IT_SSPU/](https://studenti-sspu-opava.github.io/IT_SSPU/)
+[https://studenti-sspu-opavagithub.io/IT_SSPU/](https://studenti-sspu-opavagithub.io/IT_SSPU/)
 <br><br><br><br>
 
 # CHANGELOG:
@@ -23,7 +23,7 @@ Pravděpodobně taky nebude
 
 - Přídán workflow na automatické rozjetí webových souborů (HTML, CSS, JS) do github pages
 - Přidány některé HTML soubory pro rozjetí github pages
-- Přidán zobrazovač html stránek [zde](https://studenti-sspu-opava.github.io/IT_SSPU/)
+- Přidán zobrazovač html stránek [zde](https://studenti-sspu-opavagithub.io/IT_SSPU/)
 
 ## V 5.0
 
@@ -38,9 +38,9 @@ Pravděpodobně taky nebude
 
 ## V 3.0
 
-- Přidal jsem .gitignore, ať tu nedělají zbytečné soubory nepořádek (snad to bude fungovat dobře, když tak to můžete fixnout)
+- Přidal jsem gitignore, ať tu nedělají zbytečné soubory nepořádek (snad to bude fungovat dobře, když tak to můžete fixnout)
 - Přidal jsem soubory z ATF a některé příklady z PRP
-- Udělal jsem repozitář kde jsou příklady z PVY, sem to nešlo dát, repozitář je zde: [repozitář](https://github.com/ferenc1234/ferenc1234.github.io), náhled zde: [náhled](https://ferenc1234.github.io)
+- Udělal jsem repozitář kde jsou příklady z PVY, sem to nešlo dát, repozitář je zde: [repozitář](https://github.com/ferenc1234/ferenc1234github.io), náhled zde: [náhled](https://ferenc1234github.io)
 
 ## V 2.0
 
