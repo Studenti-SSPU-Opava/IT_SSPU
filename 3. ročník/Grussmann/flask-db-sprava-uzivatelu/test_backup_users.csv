@@ -1,0 +1,4 @@
+id,username,email,datum_narozeni,created_at
+1,admin,admin@example.com,1985-03-15,2025-10-07T11:30:45.478612
+2,jana_novakova,jana@example.com,1992-07-22,2025-10-07T11:30:45.478615
+3,petr_svoboda,petr@example.com,,2025-10-07T11:30:45.478616

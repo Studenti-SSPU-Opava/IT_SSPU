@@ -1,0 +1,26 @@
+# Flask Core Framework
+Flask==3.1.2
+Werkzeug==3.1.3
+Jinja2==3.1.6
+click==8.3.0
+itsdangerous==2.2.0
+MarkupSafe==3.0.3
+blinker==1.9.0
+
+# Database & Migrations
+Flask-SQLAlchemy==3.1.1
+SQLAlchemy==2.0.43
+Flask-Migrate==4.1.0
+alembic==1.16.5
+greenlet==3.2.4
+
+# Forms & Validation
+Flask-WTF==1.2.2
+WTForms==3.2.1
+
+# Template Engine
+Mako==1.3.10
+
+# Development Dependencies
+tomli==2.2.1
+typing_extensions==4.15.0

@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@example.com",
+      "datum_narozeni": "1985-03-15",
+      "created_at": "2025-10-07T11:30:45.478612"
+    },
+    {
+      "id": 2,
+      "username": "jana_novakova",
+      "email": "jana@example.com",
+      "datum_narozeni": "1992-07-22",
+      "created_at": "2025-10-07T11:30:45.478615"
+    },
+    {
+      "id": 3,
+      "username": "petr_svoboda",
+      "email": "petr@example.com",
+      "datum_narozeni": null,
+      "created_at": "2025-10-07T11:30:45.478616"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Vítejte v našem blogu!",
+      "content": "Toto je první příspěvek na našem novém blogu. Těšíme se na vaše příspěvky!",
+      "created_at": "2025-10-07T11:30:45.499758",
+      "author": "admin"
+    },
+    {
+      "id": 2,
+      "title": "Jak používat Flask",
+      "content": "Flask je skvělý mikroframework pro Python. V tomto příspěvku si ukážeme základy...",
+      "created_at": "2025-10-07T11:30:45.499759",
+      "author": "jana_novakova"
+    },
+    {
+      "id": 3,
+      "title": "Databázové migrace s Alembic",
+      "content": "Alembic nám umožňuje elegantně spravovat změny v databázovém schématu...",
+      "created_at": "2025-10-07T11:30:45.499760",
+      "author": "petr_svoboda"
+    }
+  ],
+  "exported_at": "2025-10-07T11:31:12.106708",
+  "version": "1.0"
+}
