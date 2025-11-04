@@ -1,3 +1,15 @@
+/*
+ * beh.c ver. 1.0
+ *
+ * Otvírá soubor se závodníky, 
+ * vypíše do souboru.
+ * ===========================
+ *
+ * Radim Šenk - 30. 9. 2025
+ * 
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

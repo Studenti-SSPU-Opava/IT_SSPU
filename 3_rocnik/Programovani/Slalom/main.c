@@ -1,3 +1,18 @@
+/*
+ * beh.c ver. 1.0
+ *
+ * Otvírá soubor se závodníky, 
+ * vypíše do souboru čas prvního 
+ * a druhého kola.
+ * =============================
+ *
+ * Radim Šenk - 30. 9. 2025
+ * 
+ */
+
+
+
+
 //
 // Nejlehci typ prikladu, doufejte v to... !!!JESTLI TOTO BUDETE KOPIROVAT TAK TENTO RADEK SMAZTE!!!
 //
