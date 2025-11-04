@@ -1,3 +1,17 @@
+/*
+ * beh.c ver. 1.0
+ *
+ * Otvírá soubor se závodníky, 
+ * spočítá pořadí závodníků,
+ * vyfiltruje a vypíše závodníky z ČR.
+ * ===================================
+ *
+ * Radim Šenk - 30. 9. 2025
+ * 
+ */
+ 
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
