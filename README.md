@@ -73,9 +73,3 @@ Changed
 
 - V průběhu roku byly do repozitáře průběžně přidávány příklady z programování, materiály k OS, návody (např. jak na Home Assistant, Wordpress s Nginx), a soubory z hodin (úlohy/projekty). Tyto záznamy najdete v historických PR v GitHubu.
 
----
-
-Pokud chcete, mohu tento changelog ještě rozšířit o kratké popisy autorů u jednotlivých změn (kdo PR vytvořil/sloučil), nebo přidat jednoduché pravidlo jak přidávat záznamy pro budoucí vydání (např. šablona pro PR popis pro changelog). Chcete, abych to doplnil?
----
-
-Poznámka: changelog shrnuje hlavní změny sloučené přes PR (viz čísla PR v textu). Pro detailní historii viz `git log` nebo stránka Pull Requests na GitHubu.
