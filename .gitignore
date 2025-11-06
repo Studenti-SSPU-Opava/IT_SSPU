@@ -60,7 +60,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-.vscode/*
 
 # Local History for Visual Studio Code
 .history/
