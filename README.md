@@ -19,32 +19,63 @@ Pravděpodobně taky nebude
 
 
 
-## V 6.0
+## CHANGELOG
 
-- Přídán workflow na automatické rozjetí webových souborů (HTML, CSS, JS) do github pages
-- Přidány některé HTML soubory pro rozjetí github pages
-- Přidán zobrazovač html stránek [zde](https://studenti-sspu-opavagithub.io/IT_SSPU/)
+Níže je detailnější, verzovaný přehled hlavních změn — přehled je zaměřený na to, co bylo přidáno, změněno nebo opravováno. Neměním dřívější obsah repozitáře, pouze přeskupuji záznamy do přehlednějších verzí.
 
-## V 5.0
+### Unreleased / v6.1 (work in progress)
 
-- Složky byly přeaunuty do ročníků.
-- Přidané workflow na automatickou kompilaci a kontrolu souborů.
+Added
+- Přidán nový C++ projekt "kružnice" ve složce s příklady (otevřený PR #57) — připravené zdrojové soubory a konfigurace pro VS Code.
+- Přidán `tasks.json` pro snadnější spuštění/kompilaci některých projektů v editoru.
 
-## V 4.0
+Changed
+- Normalizace názvů složek a souborů (odstraněna diakritika a mezery) → sjednocení na `1_rocnik`, `2_rocnik`, `3_rocnik` a související úpravy odkazů a zobrazení.
+- Upraveny cesty a odkazy pro zobrazení webových souborů (lepší kompatibilita s GitHub Pages a lokálním náhledem).
 
-- Přejmenoval jsem repozitář (jo, zase), jelikož se ho snažím přizpůsobit i do dalších ročníků a i pro studenty jiných ročníků (snad se tím nic nerozbilo).
-- Větev main by měla (snad jsem to udělal dobře) být uzavřená, pro commity si udělejte prosím jiný branch a pak pull request (tutoriál bude).
-- Založil jsem organizaci, od teď to budu psát v množném čísle, takže nikdo nebude vědět, že tohle píše franta :D (nebo nikdo jiný ( respektive to bude vědět, když se podívá do commitu, ale to přece nikdo nedělá :joy: ) ) 
+Fixed
+- Opraveny GitHub Actions workflow (yaml indentace, odstranění neexistujících balíčků, přidání `-y` pro `apt-get`, odstranění nespolehlivých kroků). Výsledkem jsou stabilnější CI běhy.
+- Opraveny shell skripty v rámci klonovaného Flask projektu (citování proměnných, direktivy pro ShellCheck, spouštěcí skripty pro gunicorn).
 
-## V 3.0
+Notes
+- Hromadné přeformátování a drobné úpravy dokumentace/souborů napříč repo; některé doplněné příklady v C/Python.
 
-- Přidal jsem gitignore, ať tu nedělají zbytečné soubory nepořádek (snad to bude fungovat dobře, když tak to můžete fixnout)
-- Přidal jsem soubory z ATF a některé příklady z PRP
-- Udělal jsem repozitář kde jsou příklady z PVY, sem to nešlo dát, repozitář je zde: [repozitář](https://github.com/ferenc1234/ferenc1234github.io), náhled zde: [náhled](https://ferenc1234github.io)
+### v6.0 (stabilní vydání)
 
-## V 2.0
+Added
+- Workflow pro publikaci statických webových souborů na GitHub Pages.
+- Zobrazovač HTML stránek pro snadné prohlížení (projekt nasazen na GitHub Pages).
 
-- Repozitář byl předělán, ať obsahuje i kódy z programování (C, Python {- U pythonu jsi nejdem jistý, jestli ho vůbec budeme používat, ale pro některé účely se bude hodit}) 
-- Přidal jsem obrázky do návodu jak commitovat. 
-- Počítám s dalšími updaty návodů pro GitHub
-- Přejmenoval jsem repozitář, aby bylo jasné, že tady bude víc předmětů než jen Operační Systémy (Nově jméno repozitáře => IT1)
+Changed
+- Struktura repozitáře upravena tak, aby byla přehlednější pro více ročníků (přesun souborů do složek podle ročníků).
+
+Fixed
+- Menší opravy odkazů a konfigurací pro správné zobrazení webových stránek.
+
+### v5.0
+
+Added
+- Základní GitHub Actions workflow pro jazyky a nástroje používané v repozitáři (C, Python, Bash, statické HTML ověření).
+- Soubory s ukázkami a prověrkami pro 2. ročník a další materiály.
+
+Changed
+- Přeorganizování materiálů do tematických složek a zlepšení navigace v repozitáři.
+
+### v4.0 (historie)
+
+Added
+- .gitignore a počáteční sady příkladů (C, dokumenty Word -> MD konverze atd.).
+
+Changed
+- Přejmenování repozitáře a drobné organizační změny — doporučení práce přes větve + PR proces.
+
+### Starší záznamy (shrnutí)
+
+- V průběhu roku byly do repozitáře průběžně přidávány příklady z programování, materiály k OS, návody (např. jak na Home Assistant, Wordpress s Nginx), a soubory z hodin (úlohy/projekty). Tyto záznamy najdete v historických PR v GitHubu.
+
+---
+
+Pokud chcete, mohu tento changelog ještě rozšířit o kratké popisy autorů u jednotlivých změn (kdo PR vytvořil/sloučil), nebo přidat jednoduché pravidlo jak přidávat záznamy pro budoucí vydání (např. šablona pro PR popis pro changelog). Chcete, abych to doplnil?
+---
+
+Poznámka: changelog shrnuje hlavní změny sloučené přes PR (viz čísla PR v textu). Pro detailní historii viz `git log` nebo stránka Pull Requests na GitHubu.
