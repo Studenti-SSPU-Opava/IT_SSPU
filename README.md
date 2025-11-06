@@ -3,16 +3,28 @@
 V tomto repozitáři najdete vše, co jsme dělali ve škole, narazíte tu i na drobné studentské projekty, zápisy a podobně.<br>
 Snažíme se tento repositář udělat vhodným místem pro studium a pro odkládání souborů, které by mohly sloužit i ostatním.
 
+## 📖 Dokumentace a návody
+
+### 📚 Wiki
+Pro přehledné návody, příkazy a užitečné odkazy navštivte naši **[Wiki](https://github.com/Studenti-SSPU-Opava/IT_SSPU/wiki)** nebo prohlédněte soubory v adresáři [`wiki/`](wiki/).
+
+Wiki obsahuje:
+- **[Git příkazy](wiki/Git-Prikazy.md)** - Kompletní přehled Git příkazů
+- **[Linux příkazy](wiki/Linux-Prikazy.md)** - Užitečné příkazy pro Linux
+- **[Windows příkazy](wiki/Windows-Prikazy.md)** - Příkazy pro Windows
+- **[Klávesové zkratky](wiki/Klavesove-Zkratky.md)** - Jak psát speciální znaky
+- **[Užitečné odkazy](wiki/Uzitecne-Odkazy.md)** - Tutoriály a validátory
+
 ### 💡 Jak provádět commity
 mělo být přidáno později, jaksi nïkdo nemá čas i chuť, takže smolík
 
 ### 📋 Návod k commitování
 Pravděpodobně taky nebude
 
-
-### Zobrazovač html souborů:
+### 🌐 Zobrazovač html souborů
 [https://studenti-sspu-opavagithub.io/IT_SSPU/](https://studenti-sspu-opavagithub.io/IT_SSPU/)
-<br><br><br><br>
+
+<br>
 
 # CHANGELOG:
 <br>
