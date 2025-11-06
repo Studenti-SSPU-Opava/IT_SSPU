@@ -1,4 +1,17 @@
-# ***Plánuje se předělání souboru***
+# ⚠️ Tento soubor byl přesunut na Wiki
+
+> **Tento soubor je zastaralý a bude brzy odstraněn.**
+> 
+> Nový, lépe organizovaný obsah najdete na:
+> - **[Wiki - Git příkazy](wiki/Git-Prikazy.md)**
+> - **[Wiki - Linux příkazy](wiki/Linux-Prikazy.md)**
+> - **[Wiki - Windows příkazy](wiki/Windows-Prikazy.md)**
+> 
+> Nebo navštivte hlavní [Wiki stránku](https://github.com/Studenti-SSPU-Opava/IT_SSPU/wiki)
+
+---
+
+# ***DEPRECATED - Plánuje se předělání souboru***
 
 
 
