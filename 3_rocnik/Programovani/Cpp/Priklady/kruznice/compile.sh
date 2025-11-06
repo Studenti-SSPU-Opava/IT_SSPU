@@ -2,9 +2,7 @@
 # Compilation script for kruznice project
 
 echo "Compiling kruznice project..."
-g++ -o main main.cpp kruznice.cpp bod.cpp
-
-if [ $? -eq 0 ]; then
+if g++ -o main main.cpp kruznice.cpp bod.cpp; then
     echo "✓ Compilation successful!"
     echo "Run with: ./main"
 else
