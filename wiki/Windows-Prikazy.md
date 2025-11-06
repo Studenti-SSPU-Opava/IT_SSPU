@@ -37,7 +37,7 @@ cd cesta\ke\slozce
 
 ### Vytvořit složku
 ```bash
-mkdir nazev-slozky
+mkdir název-složky
 ```
 
 ### Smazat soubor
@@ -47,7 +47,7 @@ del nazev-souboru.txt
 
 ### Smazat složku
 ```bash
-rmdir /s nazev-slozky
+rmdir /s název-složky
 ```
 
 ### Kopírovat soubor

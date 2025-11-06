@@ -18,12 +18,12 @@ cd cesta/k/slozce
 
 ### Vytvořit novou složku (Make Directory)
 ```bash
-mkdir nazev-slozky
+mkdir nazev-složky
 ```
 
 ### Vytvořit soubor
 ```bash
-touch adresar/nazev-souboru.txt
+touch adresář/nazev-souboru.txt
 ```
 
 ### Zobrazit obsah složky
@@ -49,7 +49,7 @@ rm nazev-souboru
 
 ### Smazat složku
 ```bash
-rm -r nazev-slozky
+rm -r nazev-složky
 ```
 
 ---
@@ -63,27 +63,27 @@ sudo prikaz
 
 ### Přidat uživatele (jako root)
 ```bash
-adduser nazev-uzivatele
+adduser název-uživatele
 ```
 
 ### Odebrat uživatele (jako root)
 ```bash
-deluser nazev-uzivatele
+deluser název-uživatele
 ```
 
 ### Přidat skupinu (jako root)
 ```bash
-addgroup nazev-skupiny
+addgroup název-skupiny
 ```
 
 ### Odebrat skupinu (jako root)
 ```bash
-delgroup nazev-skupiny
+delgroup název-skupiny
 ```
 
 ### Přidat uživatele do skupiny (jako root)
 ```bash
-usermod -a -G nazev-skupiny nazev-uzivatele
+usermod -a -G název-skupiny název-uživatele
 ```
 
 ### Změnit vlastnictví souboru
@@ -103,7 +103,7 @@ chmod 755 cesta/k/souboru
 
 ### Instalovat balíček pomocí APT
 ```bash
-sudo apt install nazev-balicku
+sudo apt install název-balíčku
 ```
 
 ### Aktualizovat seznam dostupných balíčků
@@ -118,12 +118,12 @@ sudo apt upgrade
 
 ### Hledat instalační balíček
 ```bash
-apt-cache search nazev-balicku
+apt-cache search název-balíčku
 ```
 
 ### Odinstalovat balíček
 ```bash
-sudo apt remove nazev-balicku
+sudo apt remove název-balíčku
 ```
 
 ---

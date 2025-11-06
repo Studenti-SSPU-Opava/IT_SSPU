@@ -34,10 +34,10 @@ Vytvoří lokální kopii vzdáleného repozitáře.
 
 ```bash
 # HTTPS metoda
-git clone https://github.com/jmeno/nazev-repozitare.git
+git clone https://github.com/jmeno/nazev-repozitaru.git
 
 # SSH metoda
-git clone git@github.com:jmeno/nazev-repozitare.git
+git clone git@github.com:jmeno/nazev-repozitaru.git
 ```
 
 ### Stáhnout změny ze vzdáleného repozitáře
