@@ -6,7 +6,7 @@ Předpoklad: Ubuntu, g++ nainstalován.
 1. Stáhněte repozitář:  
     git clone <repo-url> && cd <repo-folder>
 2. Otevřete složku ve VS Code. `.vscode/tasks.json` je už v repu.
-3. Spuštění: Terminal → Run Task... → build kruznice project
+3. Spuštění: Terminal → Run Task... → build and run kruznice project
 ## CLion / CMake — správné připojení knihoven
 
 - CLion obvykle vytvoří `CMakeLists.txt` automaticky. Pro správné připojení knihoven upravte tento soubor.
