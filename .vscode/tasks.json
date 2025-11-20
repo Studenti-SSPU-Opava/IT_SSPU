@@ -23,6 +23,27 @@
       }
     },
     {
+      "label": "Build and Run zlomek",
+      "type": "shell",
+      "command": "bash ./compile.sh",
+      "options": {
+        "cwd": "${workspaceFolder}/3_rocnik/Programovani/Cpp/Priklady/zlomek"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
       "type": "cppbuild",
       "label": "C/C++: g++ build active file",
       "command": "/usr/bin/g++",
