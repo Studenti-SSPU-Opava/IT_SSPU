@@ -5,6 +5,7 @@
 #ifndef DYNAMICKEPOLE_ZLOMEK_H
 #define DYNAMICKEPOLE_ZLOMEK_H
 
+#include <ostream>
 
 class zlomek{
 public:    
@@ -27,5 +28,6 @@ private:
     int spolecnyDelitel(int a, int b);
 };
 
+std::ostream & operator<<(std::ostream &, const zlomek &);
 
 #endif //DYNAMICKEPOLE_ZLOMEK_H
