@@ -9,6 +9,12 @@
 
 class BirthNumberGenerator {
 public:
+    enum class InputType {
+        Year,
+        Month,
+        Day,
+        ThreeDigits
+    };
     BirthNumberGenerator();
     ~BirthNumberGenerator();
     std::string generateBirthNumber();
@@ -17,6 +23,7 @@ public:
     bool setDay(int day);
     bool setThreeDigits(int threeDigits);
     bool setGenderFromInput(int genderChoice);
+    void promptAndSetInput(InputType type);
 private:
     int day;
     int month;

@@ -22,55 +22,15 @@ int main() {
     srand(time(0));
     BirthNumberGenerator generator;
     // Helper variables for keyboard input
-    int year, month, day, threeDigits;
     int genderChoice = 0;
 
     std::cout << "--- GENERATOR RODNEHO CISLA ---\n";
 
     // Input and validate year, month, day, and three-digit number (checks also for non-integer input)
-    do {
-        std::cout << "Zadejte rok (1954 - 2053): ";
-        if (!(std::cin >> year)) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Chybne zadani, zkuste to znovu.\n";
-            year = 0;
-            continue;
-        }
-    } while (!generator.setYear(year)); // Repeat until method returns true (until there is a valid input)
-
-    do {
-        std::cout << "Zadejte mesic (1 - 12): ";
-        if (!(std::cin >> month)) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Chybne zadani, zkuste to znovu.\n";
-            month = 0;
-            continue;
-        }
-    } while (!generator.setMonth(month));
- 
-    do {
-        std::cout << "Zadejte den: ";
-        if (!(std::cin >> day)) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Chybne zadani, zkuste to znovu.\n";
-            day = 0;
-            continue;
-        }
-    } while (!generator.setDay(day));
-
-    do {
-        std::cout << "Zadejte trojcisli (1 - 999): ";
-        if (!(std::cin >> threeDigits)) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Chybne zadani, zkuste to znovu.\n";
-            threeDigits = 0;
-            continue;
-        }
-    } while (!generator.setThreeDigits(threeDigits));
+    generator.promptAndSetInput(BirthNumberGenerator::InputType::Year);
+    generator.promptAndSetInput(BirthNumberGenerator::InputType::Month);
+    generator.promptAndSetInput(BirthNumberGenerator::InputType::Day);
+    generator.promptAndSetInput(BirthNumberGenerator::InputType::ThreeDigits);
 
     // Input gender
     while (!generator.setGenderFromInput(genderChoice)) {

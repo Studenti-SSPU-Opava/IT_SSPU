@@ -6,6 +6,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <limits>
 #include <string>
 
 
@@ -113,4 +114,53 @@ bool BirthNumberGenerator::setGenderFromInput(int genderChoice) {
     } else {
         return false;
     }
+}
+
+// Prompt for an integer input and set the corresponding field
+void BirthNumberGenerator::promptAndSetInput(InputType type) {
+    int value = 0;
+    bool isValid = false;
+
+    do {
+        switch (type) {
+            case InputType::Year:
+                std::cout << "Zadejte rok (1954 - 2053): ";
+                break;
+            case InputType::Month:
+                std::cout << "Zadejte mesic (1 - 12): ";
+                break;
+            case InputType::Day:
+                std::cout << "Zadejte den: ";
+                break;
+            case InputType::ThreeDigits:
+                std::cout << "Zadejte trojcisli (1 - 999): ";
+                break;
+        }
+
+        if (!(std::cin >> value)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Chybne zadani, zkuste to znovu.\n";
+            continue;
+        }
+
+        switch (type) {
+            case InputType::Year:
+                isValid = setYear(value);
+                break;
+            case InputType::Month:
+                isValid = setMonth(value);
+                break;
+            case InputType::Day:
+                isValid = setDay(value);
+                break;
+            case InputType::ThreeDigits:
+                isValid = setThreeDigits(value);
+                break;
+        }
+
+        if (!isValid) {
+            std::cout << "Chybne zadani, zkuste to znovu.\n";
+        }
+    } while (!isValid);
 }
