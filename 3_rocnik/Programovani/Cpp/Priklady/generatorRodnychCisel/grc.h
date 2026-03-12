@@ -1,37 +1,28 @@
 //
-// Created by adamb on 26.02.2026.
+// Created by iqmas on 08.03.2026.
 //
 
-#ifndef GENERATORRODNEHOCISLA_GRC_H
-#define GENERATORRODNEHOCISLA_GRC_H
+#ifndef BIRTH_NUMBER_GENERATOR_H
+#define BIRTH_NUMBER_GENERATOR_H
+
 #include <string>
 
-
-class grc {
+class BirthNumberGenerator {
 public:
-    grc();
-
-    ~grc();
-
-    std::string vygenerujRC(int d, int m, int r, int t);
-
-    bool get_r(int r);
-
-    bool get_m(int m);
-
-    bool get_d(int d);
-
-    bool get_t(int t);
-
-    bool get_p(int p);
+    BirthNumberGenerator();
+    ~BirthNumberGenerator();
+    std::string generateBirthNumber();
+    bool setYear(int year);
+    bool setMonth(int month);
+    bool setDay(int day);
+    bool setThreeDigits(int threeDigits);
+    bool setGenderFromInput(int genderChoice);
 private:
-    int den;
-    int mesic;
-    int rok;
-    int triCisla;
-
-    bool jeZena;
+    int day;
+    int month;
+    int year;
+    int threeDigits;
+    bool isFemale;
 };
 
-
-#endif //GENERATORRODNEHOCISLA_GRC_H
+#endif // BIRTH_NUMBER_GENERATOR_H

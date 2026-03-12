@@ -1,57 +1,90 @@
+/*
+ * generatorRodnychCisel.c ver. 1.0
+ *
+ * Generuje rodne cislo na zaklade zadanych 
+ * vstupnich parametru (rok, mesic, den, 
+ * trojciferny kod a pohlavi).
+ * ========================================
+ *
+ * František Rubáček - 8. 3. 2026
+ * 
+ */
+
+
+
 #include <iostream>
-#include <ctime>    // Pro time()
-#include "grc.h"
+#include <ctime>    // For time() function
+#include <limits>   // For input validation
+#include "grc.h"    // Include the BirthNumberGenerator class
 
 int main() {
-    // Inicializace generátoru náhodných čísel (stačí zavolat jednou na začátku)
+    // Initialize the random number generator
     srand(time(0));
-
-    // Vytvoření objektu tvé třídy
-    grc rcGen;
-
-    // Pomocné proměnné pro načítání z klávesnice
-    int r, m, d, t;
-    int p = 0; // Pro pohlaví
+    BirthNumberGenerator generator;
+    // Helper variables for keyboard input
+    int year, month, day, threeDigits;
+    int genderChoice = 0;
 
     std::cout << "--- GENERATOR RODNEHO CISLA ---\n";
 
-    // 1. Načtení a kontrola roku
+    // Input and validate year, month, day, and three-digit number (checks also for non-integer input)
     do {
         std::cout << "Zadejte rok (1954 - 2053): ";
-        std::cin >> r;
-    } while (!rcGen.get_r(r)); // Opakuj, dokud metoda vrací false
+        if (!(std::cin >> year)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Chybne zadani, zkuste to znovu.\n";
+            year = 0;
+            continue;
+        }
+    } while (!generator.setYear(year)); // Repeat until method returns true (until there is a valid input)
 
-    // 2. Načtení a kontrola měsíce
     do {
         std::cout << "Zadejte mesic (1 - 12): ";
-        std::cin >> m;
-    } while (!rcGen.get_m(m));
-
-    // 3. Načtení a kontrola dne (musí být až po roce a měsíci kvůli přestupným rokům)
+        if (!(std::cin >> month)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Chybne zadani, zkuste to znovu.\n";
+            month = 0;
+            continue;
+        }
+    } while (!generator.setMonth(month));
+ 
     do {
         std::cout << "Zadejte den: ";
-        std::cin >> d;
-    } while (!rcGen.get_d(d));
+        if (!(std::cin >> day)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Chybne zadani, zkuste to znovu.\n";
+            day = 0;
+            continue;
+        }
+    } while (!generator.setDay(day));
 
-    // 4. Načtení a kontrola trojčíslí
     do {
         std::cout << "Zadejte trojcisli (1 - 999): ";
-        std::cin >> t;
-    } while (!rcGen.get_t(t));
+        if (!(std::cin >> threeDigits)) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Chybne zadani, zkuste to znovu.\n";
+            threeDigits = 0;
+            continue;
+        }
+    } while (!generator.setThreeDigits(threeDigits));
 
-    // 5. Načtení pohlaví (tvoje metoda má uvnitř vlastní cout a cin, takže ji jen zavoláme)
-    while (!rcGen.get_p(p)) {
+    // Input gender
+    while (!generator.setGenderFromInput(genderChoice)) {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::cout << "Chybne zadani, zkuste to znovu.\n";
     }
 
-    // 6. Generování
-    // Poznámka: Posíláme nuly, protože tvoje metoda vygenerujRC ignoruje parametry
-    // a rovnou si bere data z privátních proměnných (den, mesic, atd.).
-    std::string vysledek = rcGen.vygenerujRC(0, 0, 0, 0);
+    // Generate the identification number (Rodne cislo)
+    std::string result = generator.generateBirthNumber();
 
-    // 7. Výpis
+    // Display result
     std::cout << "\n-------------------------------\n";
-    std::cout << "Vygenerovane rodne cislo: " << vysledek << "\n";
+    std::cout << "Vygenerovane rodne cislo: " << result << "\n";
     std::cout << "-------------------------------\n";
 
     return 0;
