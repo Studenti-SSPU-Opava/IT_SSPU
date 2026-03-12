@@ -11,6 +11,12 @@
  */
 
 
+ // Upravit "špagety kód",
+ // spravit desetinné čísla
+ // hláška o zbytku pokud zbytek == 10
+ // opakování programu
+ // nabízení počtu dnů v měsíci
+
 
 #include <iostream>
 #include <ctime>    // For time() function
