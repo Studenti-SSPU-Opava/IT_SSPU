@@ -22,7 +22,7 @@ mělo být přidáno později, jaksi nïkdo nemá čas i chuť, takže smolík
 Pravděpodobně taky nebude
 
 ### 🌐 Zobrazovač html souborů
-[https://studenti-sspu-opavagithub.io/IT_SSPU/](https://studenti-sspu-opavagithub.io/IT_SSPU/)
+[https://studenti-sspu-opava.github.io/IT_SSPU/](https://studenti-sspu-opava.github.io/IT_SSPU/)
 
 <br>
 
