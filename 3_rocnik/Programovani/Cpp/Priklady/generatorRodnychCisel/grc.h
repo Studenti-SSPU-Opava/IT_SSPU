@@ -22,7 +22,7 @@ public:
     bool setMonth(int month);
     bool setDay(int day);
     bool setThreeDigits(int threeDigits);
-    bool setGenderFromInput(int genderChoice);
+    bool setGenderFromInput();
     void promptAndSetInput(InputType type);
 private:
     int day;
@@ -31,5 +31,7 @@ private:
     int threeDigits;
     bool isFemale;
 };
+
+bool promptRepeat();
 
 #endif // BIRTH_NUMBER_GENERATOR_H

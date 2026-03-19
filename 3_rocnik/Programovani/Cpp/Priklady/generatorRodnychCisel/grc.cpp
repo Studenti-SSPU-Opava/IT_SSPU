@@ -6,8 +6,71 @@
 
 #include <cstdlib>
 #include <iostream>
-#include <limits>
+#include <sstream>
 #include <string>
+
+namespace {
+bool parseIntStrict(const std::string& line, int& value) {
+    // Strict integer parse: reject decimals and trailing characters.
+    // basically checks if the entire line is a valid integer.
+    std::istringstream iss(line);
+    iss >> value;
+    if (iss.fail()) {
+        return false;
+    }
+    char extra = 0;
+    if (iss >> extra) {
+        return false;
+    }
+    return true;
+}
+
+int maxDayInMonth(int month, int year) {
+    // Month length with leap-year handling.
+    if (month == 2) {
+        bool leap = ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
+        return leap ? 29 : 28;
+    }
+    if (month == 4 || month == 6 || month == 9 || month == 11) {
+        return 30;
+    }
+    return 31;
+}
+
+int readIntWithPrompt(const std::string& prompt, int minValue, int maxValue) {
+    // Read whole line to avoid leftover input and infinite loops on bad input. Also cheks if the input is an integer and within the specified range.
+    int value = 0;
+    while (true) {
+        std::cout << prompt;
+        std::string line;
+        if (!std::getline(std::cin, line)) {
+            std::cin.clear();
+            continue;
+        }
+
+        if (!parseIntStrict(line, value)) { //tests the validity of a string as an integer and checks for trailing characters
+            std::cout << "Chybne zadani, zkuste to znovu.\n";
+            continue;
+        }
+
+        if (value < minValue || value > maxValue) {
+            std::cout << "Chybne zadani, zkuste to znovu.\n";
+            continue;
+        }
+
+        return value;
+    }
+}
+}
+
+bool promptRepeat() {
+    // Loop until user explicitly chooses 1 or 0.
+    int choice = readIntWithPrompt(
+        "Chcete vygenerovat dalsi rodne cislo? (1 = ano, 0 = ne): ",
+        0,
+        1);
+    return choice == 1;
+}
 
 
 // Constructor - Initialize default Czech birth number values
@@ -41,6 +104,8 @@ std::string BirthNumberGenerator::generateBirthNumber() {
         remainder = static_cast<int>(birthNumber % 11);
         // If remainder is 10, generate new sequence and retry
         if (remainder == 10) {
+            // Czech birth numbers cannot end with remainder 10; retry with new sequence.
+            std::cout << "Zbytek po deleni 11 je 10, generuji nove trojcisli.\n";
             sequence = (std::rand() % 1000);
             threeDigits = sequence; // prevent infinite loop
         }
@@ -53,95 +118,71 @@ std::string BirthNumberGenerator::generateBirthNumber() {
 
 // Validate and set day (1-31, considering month and leap years)
 bool BirthNumberGenerator::setDay(int dayInput) {
-    day = dayInput;
-    if (day > 31) {
-        return false;
-    } else if (day == 31 && (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)) {
-        return true;
-    } else if (day == 30 && (month == 4 || month == 6 || month == 9 || month == 11)) {
-        return true;
-    } else if (day == 29 && month == 2 && (((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))) {
-        return true;
-    } else if (day == 28 && month == 2) {
-        return true;
-    } else if (day >= 1 && day <= 28) {
-        return true;
-    } else {
+    int maxDay = maxDayInMonth(month, year);
+    if (dayInput < 1 || dayInput > maxDay) {
         return false;
     }
+    day = dayInput;
+    return true;
 }
 
 // Validate and set month (1-12)
 bool BirthNumberGenerator::setMonth(int monthInput) {
-    month = monthInput;
-    if (month <= 0 || month > 12) {
+    if (monthInput <= 0 || monthInput > 12) {
         return false;
-    } else {
-        return true;
     }
+    month = monthInput;
+    return true;
 }
 
 // Validate and set year (1954-2053)
 bool BirthNumberGenerator::setYear(int yearInput) {
-    year = yearInput;
-    if (year < 1954 || year > 2053) {
+    if (yearInput < 1954 || yearInput > 2053) {
         return false;
-    } else {
-        return true;
     }
+    year = yearInput;
+    return true;
 }
 
 // Validate and set sequence digits (1-1000)
 bool BirthNumberGenerator::setThreeDigits(int threeDigitsInput) {
-    threeDigits = threeDigitsInput;
-    if (threeDigits <= 0 || threeDigits > 1000) {
+    if (threeDigitsInput <= 0 || threeDigitsInput > 999) {
         return false;
-    } else {
-        return true;
     }
+    threeDigits = threeDigitsInput;
+    return true;
 }
 
 // Prompt user to input gender and set accordingly
-bool BirthNumberGenerator::setGenderFromInput(int genderChoice) {
-    std::cout << "Zadejte cislo 0 (muz) nebo 1 (zena):" << std::endl;
-    std::cin >> genderChoice;
-    if (genderChoice == 1) {
-        isFemale = true;
-        return true;
-    } else if (genderChoice == 0) {
-        isFemale = false;
-        return true;
-    } else {
-        return false;
-    }
+bool BirthNumberGenerator::setGenderFromInput() {
+    // Uses strict input to avoid leftover characters in the stream.
+    int genderChoice = readIntWithPrompt("Zadejte cislo 0 (muz) nebo 1 (zena): ", 0, 1);
+    isFemale = (genderChoice == 1);
+    return true;
 }
 
 // Prompt for an integer input and set the corresponding field
 void BirthNumberGenerator::promptAndSetInput(InputType type) {
-    int value = 0;
     bool isValid = false;
 
     do {
+        int value = 0;
         switch (type) {
             case InputType::Year:
-                std::cout << "Zadejte rok (1954 - 2053): ";
+                value = readIntWithPrompt("Zadejte rok (1954 - 2053): ", 1954, 2053);
                 break;
             case InputType::Month:
-                std::cout << "Zadejte mesic (1 - 12): ";
+                value = readIntWithPrompt("Zadejte mesic (1 - 12): ", 1, 12);
                 break;
             case InputType::Day:
-                std::cout << "Zadejte den: ";
+                value = readIntWithPrompt(
+                    "Zadejte den (1 - " + std::to_string(maxDayInMonth(month, year)) + "): ",
+                    1,
+                    maxDayInMonth(month, year));
                 break;
             case InputType::ThreeDigits:
-                std::cout << "Zadejte trojcisli (1 - 999): ";
+                value = readIntWithPrompt("Zadejte trojcisli (1 - 999): ", 1, 999);
                 break;
-        }
-
-        if (!(std::cin >> value)) {
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Chybne zadani, zkuste to znovu.\n";
-            continue;
         }
 
         switch (type) {
