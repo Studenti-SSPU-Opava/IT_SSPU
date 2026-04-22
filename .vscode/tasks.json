@@ -23,6 +23,27 @@
       }
     },
     {
+      "label": "Build and Run kniha",
+      "type": "shell",
+      "command": "./compile.sh",
+      "options": {
+        "cwd": "${workspaceFolder}/3_rocnik/Programovani/Cpp/Priklady/kniha"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
       "label": "Build and Run zlomek",
       "type": "shell",
       "command": "bash ./compile.sh",
