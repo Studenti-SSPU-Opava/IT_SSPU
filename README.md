@@ -38,7 +38,7 @@ Níže je detailnější, verzovaný přehled hlavních změn — přehled je za
 ### Unreleased / v6.2 (work in progress)
 
 Notes
-- Projekt `prevodySoustav` je zatim rozpracovany; ostatni projekty by mely byt v poradku.
+- Projekt `prevodySoustav` je zatím rozpracovaný; ostatní projekty by měly být v pořádku.
 
 ### v6.1 (vydano)
 
