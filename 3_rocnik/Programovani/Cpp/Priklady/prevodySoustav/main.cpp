@@ -26,14 +26,11 @@ int zadaniSoustavy(){
 
 string zadaniCisla(int zaklad) {
     string cislo;
-    bool cyklus = true;
     do {
         std::cout << "Zadejte cislo v soustave o zakladu " << zaklad << ": ";
         std::getline(std::cin, cislo);
-        if (Soustavy::platnostCisla(cislo, zaklad)) {
-            cyklus = false;
-        } else {
-            std::cout << "Neplatný vstup. Používám výchozí hodnotu 0." << std::endl;
+        if (!Soustavy::platnostCisla(cislo, zaklad)) {
+            std::cout << "Neplatný vstup. Zkuste to znovu." << std::endl;
         }
     } while (!Soustavy::platnostCisla(cislo, zaklad));
     return cislo;
