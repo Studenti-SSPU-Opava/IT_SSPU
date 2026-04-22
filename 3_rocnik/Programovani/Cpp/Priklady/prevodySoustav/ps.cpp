@@ -57,7 +57,7 @@ bool Soustavy::platnostCisla(string cislo, int zaklad) {
 unsigned int Soustavy::prevodNaDesitkovou(string cislo, int zaklad) {
     unsigned int soucet = 0;
     for (int i = 0; i < cislo.length(); i++) {
-        soucet += CIFRY.find(cislo[i]) * pow(zaklad, cislo.length() - 1 - i);
+        soucet = soucet * zaklad + CIFRY.find(cislo[i]);
     }
 	return soucet;
 }
