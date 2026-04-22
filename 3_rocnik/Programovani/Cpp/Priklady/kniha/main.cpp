@@ -22,7 +22,7 @@ std::string readLine(const std::string &prompt) { // cteni radku
 
 bool readBookFromUser(Kniha &kniha) { // zadavani knihy
     while (true) { // opakovani dokud nezruseno
-        std::string isbn = readLine("ISBN\n: "); // zadani ISBN
+        std::string isbn = readLine("ISBN: "); // zadani ISBN
         std::string autor = readLine("Autor (3 az 100) znaku: "); // zadani autora
         std::string nazev = readLine("Nazev (3 az 100) znaku: "); // zadani nazvu
 
