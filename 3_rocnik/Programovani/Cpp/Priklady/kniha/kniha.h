@@ -4,13 +4,13 @@
 #include <ostream> // vystupni stream
 #include <string> // retezce
 
-#define DEFAULT_ISBN "978-0-321-56384-2" // vychozi ISBN
-#define DEFAULT_AUTOR "Bjarne Stroustrup" // vychozi autor
-#define DEFAULT_NAZEV "The C++ Programming Language" // vychozi nazev
-#define MIN_AUTOR_LEN 3 // min delka autora
-#define MAX_AUTOR_LEN 100 // max delka autora
-#define MIN_NAZEV_LEN 3 // min delka nazvu
-#define MAX_NAZEV_LEN 100 // max delka nazvu
+const std::string DEFAULT_ISBN = "978-0-321-56384-2"; // vychozi ISBN
+const std::string DEFAULT_AUTOR = "Bjarne Stroustrup"; // vychozi autor
+const std::string DEFAULT_NAZEV = "The C++ Programming Language"; // vychozi nazev
+const int MIN_AUTOR_LEN = 3; // min delka autora
+const int MAX_AUTOR_LEN = 100; // max delka autora
+const int MIN_NAZEV_LEN = 3; // min delka nazvu
+const int MAX_NAZEV_LEN = 100; // max delka nazvu
 
 class Kniha { // hlavni trida knihy
 public:
