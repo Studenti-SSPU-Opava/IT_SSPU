@@ -40,7 +40,7 @@ Níže je detailnější, verzovaný přehled hlavních změn — přehled je za
 Notes
 - Projekt `prevodySoustav` je zatím rozpracovaný; ostatní projekty by měly být v pořádku.
 
-### v6.1 (vydano)
+### v6.1 (vydáno)
 
 Added
 - Přidán nový C++ projekt "kružnice" ve složce s příklady (otevřený PR #57) — připravené zdrojové soubory a konfigurace pro VS Code.
