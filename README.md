@@ -35,7 +35,12 @@ Pravděpodobně taky nebude
 
 Níže je detailnější, verzovaný přehled hlavních změn — přehled je zaměřený na to, co bylo přidáno, změněno nebo opravováno. Neměním dřívější obsah repozitáře, pouze přeskupuji záznamy do přehlednějších verzí.
 
-### Unreleased / v6.1 (work in progress)
+### Unreleased / v6.2 (work in progress)
+
+Notes
+- Projekt `prevodySoustav` je zatím rozpracovaný; ostatní projekty by měly být v pořádku.
+
+### v6.1 (vydáno)
 
 Added
 - Přidán nový C++ projekt "kružnice" ve složce s příklady (otevřený PR #57) — připravené zdrojové soubory a konfigurace pro VS Code.
