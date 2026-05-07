@@ -9,8 +9,8 @@ int zadaniSoustavy(){
         std::cin >> zaklad;
         if (std::cin.fail() || zaklad < Soustavy::MIN_ZAKLAD || zaklad > Soustavy::MAX_ZAKLAD) {
             std::cout << "Neplatný vstup. Používám výchozí hodnotu " << Soustavy::MIN_ZAKLAD << "." << std::endl;
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Odstraní neplatný vstup z bufferu
             std::cin.clear(); // Vyčistí chybový stav
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Odstraní neplatný vstup z bufferu
             return Soustavy::MIN_ZAKLAD;
         } else if (zaklad < Soustavy::MIN_ZAKLAD || zaklad > Soustavy::MAX_ZAKLAD) {
             std::cout << "Neplatný vstup. Používám výchozí hodnotu " << Soustavy::MIN_ZAKLAD << "." << std::endl;
