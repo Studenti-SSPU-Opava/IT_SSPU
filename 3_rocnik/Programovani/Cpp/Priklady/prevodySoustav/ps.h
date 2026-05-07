@@ -3,8 +3,6 @@
 
 #include <string>
 #include <ostream>
-using std::string;
-using std::ostream;
 
 class Soustavy
 {
@@ -12,19 +10,19 @@ class Soustavy
         static const int MIN_ZAKLAD = 2;
         static const int MAX_ZAKLAD = 16;
         Soustavy();
-        Soustavy(string cislo, int zaklad);
+        Soustavy(std::string cislo, int zaklad);
         Soustavy(const Soustavy& cislo);
         ~Soustavy();
-        string getCislo(int zaklad) const;
-        bool setCislo(string cislo, int zaklad);
-        static bool platnostCisla(string cislo, int zaklad);
+        std::string getCislo(int zaklad) const;
+        bool setCislo(std::string cislo, int zaklad);
+        static bool platnostCisla(std::string cislo, int zaklad);
     private:
         unsigned int cislo;
         static bool platnostSoustavy(int zaklad);
-        static unsigned int prevodNaDesitkovou(string cislo, int zaklad);
-        static string prevodNaJinouSoustavu(unsigned int cislo, int zaklad);
+        static unsigned int prevodNaDesitkovou(std::string cislo, int zaklad);
+        static std::string prevodNaJinouSoustavu(unsigned int cislo, int zaklad);
 };
 
-ostream& operator<<(ostream& os, const Soustavy& soustava);
+std::ostream& operator<<(std::ostream& os, const Soustavy& soustava);
 
 #endif

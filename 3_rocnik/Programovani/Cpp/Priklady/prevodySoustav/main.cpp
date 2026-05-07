@@ -4,24 +4,24 @@
 
 int zadaniSoustavy(){
     int zaklad;
-    std::cout << "Zadejte zaklad soustavy od" << Soustavy::MIN_ZAKLAD << " do " << Soustavy::MAX_ZAKLAD << ": ";
+    std::cout << "Zadejte zaklad soustavy od " << Soustavy::MIN_ZAKLAD << " do " << Soustavy::MAX_ZAKLAD << ": ";
     std::cin >> zaklad;
 
     if (std::cin.fail() || zaklad < Soustavy::MIN_ZAKLAD || zaklad > Soustavy::MAX_ZAKLAD) {
         std::cout << "Neplatný vstup. Používám výchozí hodnotu " << Soustavy::MIN_ZAKLAD << "." << std::endl;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Odstraní neplatný vstup z bufferu
         std::cin.clear(); // Vyčistí chybový stav
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Odstraní neplatný vstup z bufferu
         return Soustavy::MIN_ZAKLAD;
     }
     return zaklad;
 }
 
 
-string zadaniCisla(int zaklad) {
-    string cislo;
+std::string zadaniCisla(int zaklad) {
+    std::string cislo;
     do {
         std::cout << "Zadejte cislo v soustave o zakladu " << zaklad << ": ";
-        std::getline(std::cin, cislo);
+        std::getline(std::cin >> std::ws, cislo);
         if (!Soustavy::platnostCisla(cislo, zaklad)) {
             std::cout << "Neplatný vstup. Zkuste to znovu." << std::endl;
         }
