@@ -1,23 +1,54 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT SŠPU</title>
-    <link rel="stylesheet" type="text/css" href="1_rocnik/jazyky/html_css/mainPage.css">
-</head>
-<body>
-    <h1>IT SŠPU</h1>
-    <p class="popis">
-        Zobrazovač HTML souborů
-    <p>
-        <br>
-    <button class="button-85" onclick="window.location.href='https://studenti-sspu-opavagithub.io/IT_SSPU/1_rocnik/jazyky/html_css/'">1_rocnik</button><br><br>
-    <button class="button-85" onclick="window.location.href='https://studenti-sspu-opavagithub.io/IT_SSPU/2_rocnik/Programove_vybaveni/html_css/'">2_rocnik</button><br><br><br><br>
-    <button class="button-85" onclick="window.location.href='https://github.com/Studenti-SSPU-Opava/IT_SSPU'"><b>Zpět do repozitáře</b></button><br><br>
-    </p>
-<footer>
-    <p>&copy; 2024</p>
-</footer>
-</body>
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <title>IT SŠPU</title>
+	    <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+	    <header>
+        <nav class="toolbar">
+            <button type="button" class="toolbtn" id="sidebar-toggle" aria-expanded="true" aria-controls="sidebar">
+                <span class="toggle-hamburger">☰</span><span class="toggle-text">Strom souborů</span>
+            </button>
+            <a class="toolbtn" href="#/">Domů</a>
+            <a class="toolbtn" id="repo-link" href="https://github.com/Studenti-SSPU-Opava/IT_SSPU" target="_blank" rel="noopener">Repo</a>
+            <a class="toolbtn" id="wiki-link" href="https://github.com/Studenti-SSPU-Opava/IT_SSPU/wiki" target="_blank" rel="noopener">Wiki</a>
+            <a class="toolbtn" href="https://discord.gg/UMAnkXeGAh" target="_blank" rel="noopener">Discord</a>
+        </nav>
+	        <h1>IT SŠPU</h1>
+	        <p>Materiály ze školy na jednom místě</p>
+	    </header>
+
+		<div class="app">
+			<div class="sidebar-wrap">
+				<aside id="sidebar" aria-label="Procházení souborů">
+					<div class="sidebar-header">
+						<span class="sidebar-title">Souborový strom</span>
+						<button type="button" class="sidebar-close" id="sidebar-close" aria-label="Zavřít strom">✕</button>
+					</div>
+					<div class="tree-root">
+						<a class="tree-item file" href="#/">
+							<span class="caret"></span>
+							<span class="entry-icon">🏠</span>
+							<span class="entry-name">IT SŠPU</span>
+						</a>
+					</div>
+				</aside>
+				<div class="sidebar-resizer" id="sidebar-resizer" aria-hidden="true"></div>
+			</div>
+			<div class="backdrop" id="backdrop" hidden></div>
+			<main id="viewer">
+
+			</main>
+		</div>
+
+	<footer>
+	    <p>&copy; 2026</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script src="script.js"></script>
+	</body>
 </html>

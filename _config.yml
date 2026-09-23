@@ -1,0 +1,2 @@
+exclude:
+  - 3_rocnik/Grussmann/flask-db-sprava-uzivatelu/templates

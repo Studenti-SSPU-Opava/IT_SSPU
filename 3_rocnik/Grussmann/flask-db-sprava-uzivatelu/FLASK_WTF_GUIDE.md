@@ -61,9 +61,9 @@ class DeleteForm(FlaskForm):
 - ✅ **Kontrola jedinečnosti** - username a email
 
 ### **Uživatelské rozhraní**
-- ✅ **Automatické renderování** - {{ form.field() }}
+- ✅ **Automatické renderování** - {% raw %}{{ form.field() }}{% endraw %}
 - ✅ **Styling CSS tříd** - .is-invalid pro chyby
-- ✅ **Zobrazení chyb** - {% for error in form.field.errors %}
+- ✅ **Zobrazení chyb** - {% raw %}{% for error in form.field.errors %}{% endraw %}
 - ✅ **Zachování hodnot** - při chybě se formulář nevymaže
 
 ### **Zjednodušený kód**
